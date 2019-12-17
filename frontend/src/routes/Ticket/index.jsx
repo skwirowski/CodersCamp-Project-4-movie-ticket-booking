@@ -1,7 +1,5 @@
 import React from 'react';
 
-const Ticket = () => (
-    <div />
-);
+const Ticket = () => <div>Ticket</div>;
 
 export default Ticket;
