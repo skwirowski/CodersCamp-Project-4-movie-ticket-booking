@@ -5,8 +5,9 @@ import routes from 'static/routes';
 
 const Details = () => {
   const { id } = useParams();
-  // destructure object keys
+  //* destructure object keys
   const { homepage, dateSelection } = routes;
+  //*
 
   return (
     <>

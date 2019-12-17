@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
 import routes from 'static/routes';
+import moviesThunk from 'redux/thunk/moviesThunk';
 import Homepage from 'routes/Homepage';
 import Details from 'routes/Details';
 import DateSelection from 'routes/DateSelection';
@@ -10,7 +12,12 @@ import Summary from 'routes/Summary';
 import Ticket from 'routes/Ticket';
 
 const App = () => {
-  // destructure object keys
+  //* Redux operations
+  const dispatch = useDispatch();
+  const moviesStore = useSelector(state => state.movies);
+  //*
+
+  //* destructure object keys
   const {
     homepage,
     details,
@@ -19,31 +26,49 @@ const App = () => {
     summary,
     ticket,
   } = routes;
+  const { moviesList, moviesListLoading } = moviesStore;
+  //*
+
+  //* Hooks
+  const [moviesListState, setMoviesListState] = useState([]);
+
+  useEffect(() => {
+    dispatch(moviesThunk());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (moviesList.length !== 0) setMoviesListState(moviesList);
+  }, [moviesList]);
+  //*
 
   return (
     <div className="main-container">
-      <Router>
-        <Switch>
-          <Route exact path={homepage}>
-            <Homepage />
-          </Route>
-          <Route exact path={details(':id')}>
-            <Details />
-          </Route>
-          <Route exact path={dateSelection(':id')}>
-            <DateSelection />
-          </Route>
-          <Route exact path={seatingChoice(':id')}>
-            <SeatingChoice />
-          </Route>
-          <Route exact path={summary(':id')}>
-            <Summary />
-          </Route>
-          <Route exact path={ticket(':id')}>
-            <Ticket />
-          </Route>
-        </Switch>
-      </Router>
+      {moviesListLoading ? (
+        <h1>Loading...</h1>
+      ) : (
+        <Router>
+          <Switch>
+            <Route exact path={homepage}>
+              <Homepage moviesList={moviesListState} />
+            </Route>
+            <Route exact path={details(':id')}>
+              <Details />
+            </Route>
+            <Route exact path={dateSelection(':id')}>
+              <DateSelection />
+            </Route>
+            <Route exact path={seatingChoice(':id')}>
+              <SeatingChoice />
+            </Route>
+            <Route exact path={summary(':id')}>
+              <Summary />
+            </Route>
+            <Route exact path={ticket(':id')}>
+              <Ticket />
+            </Route>
+          </Switch>
+        </Router>
+      )}
     </div>
   );
 };

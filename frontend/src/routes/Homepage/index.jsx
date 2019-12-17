@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import routes from 'static/routes';
 
 const Homepage = () => {
-  // destructure object keys
+  //* destructure object keys
   const { details } = routes;
+  //*
   const temporaryMovieId = 'frozen2';
 
   return (
