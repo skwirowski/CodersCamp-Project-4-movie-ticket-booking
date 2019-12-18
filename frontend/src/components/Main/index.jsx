@@ -6,7 +6,7 @@ const Main = props => {
   return (
     <main>
       <Header />
-      <section>{props.children}</section>
+      <section style={{margin: '0 10rem'}}>{props.children}</section>
       <Footer />
     </main>
   );
