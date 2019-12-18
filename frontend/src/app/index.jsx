@@ -10,7 +10,6 @@ import DateSelection from 'routes/DateSelection';
 import SeatingChoice from 'routes/SeatingChoice';
 import Summary from 'routes/Summary';
 import Ticket from 'routes/Ticket';
-
 import Main from 'components/Main';
 
 const App = () => {

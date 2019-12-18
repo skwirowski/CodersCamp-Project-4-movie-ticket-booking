@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class Main extends Component {
+class Main extends PureComponent {
   render() {
+    const { children } = this.props;
     return (
       <div>
         <h1>The Main Component</h1>
-        {this.props.children}
+        {children}
       </div>
-    )
+    );
   }
 }
 
