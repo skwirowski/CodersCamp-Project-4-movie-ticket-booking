@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
+import 'css/App.css';
 import routes from 'static/routes';
 import moviesThunk from 'redux/thunk/moviesThunk';
 import Homepage from 'routes/Homepage';
@@ -10,7 +11,6 @@ import DateSelection from 'routes/DateSelection';
 import SeatingChoice from 'routes/SeatingChoice';
 import Summary from 'routes/Summary';
 import Ticket from 'routes/Ticket';
-
 import Main from 'components/Main';
 
 const App = () => {

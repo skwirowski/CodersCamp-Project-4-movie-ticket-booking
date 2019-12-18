@@ -1,14 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 
-class Main extends Component {
-  render() {
-    return (
-      <div>
-        <h1>The Main Component</h1>
-        {this.props.children}
-      </div>
-    )
-  }
-}
+const Main = props => {
+  return (
+    <main>
+      <Header />
+      <section>{props.children}</section>
+      <Footer />
+    </main>
+  );
+};
 
 export default Main;
