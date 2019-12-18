@@ -11,6 +11,8 @@ import SeatingChoice from 'routes/SeatingChoice';
 import Summary from 'routes/Summary';
 import Ticket from 'routes/Ticket';
 
+import Main from 'components/Main';
+
 const App = () => {
   //* Redux operations
   const dispatch = useDispatch();
@@ -46,28 +48,30 @@ const App = () => {
       {moviesListLoading ? (
         <h1>Loading...</h1>
       ) : (
-        <Router>
-          <Switch>
-            <Route exact path={homepage}>
-              <Homepage moviesList={moviesListState} />
-            </Route>
-            <Route exact path={details(':id')}>
-              <Details />
-            </Route>
-            <Route exact path={dateSelection(':id')}>
-              <DateSelection />
-            </Route>
-            <Route exact path={seatingChoice(':id')}>
-              <SeatingChoice />
-            </Route>
-            <Route exact path={summary(':id')}>
-              <Summary />
-            </Route>
-            <Route exact path={ticket(':id')}>
-              <Ticket />
-            </Route>
-          </Switch>
-        </Router>
+        <Main>
+          <Router>
+            <Switch>
+              <Route exact path={homepage}>
+                <Homepage moviesList={moviesListState} />
+              </Route>
+              <Route exact path={details(':id')}>
+                <Details />
+              </Route>
+              <Route exact path={dateSelection(':id')}>
+                <DateSelection />
+              </Route>
+              <Route exact path={seatingChoice(':id')}>
+                <SeatingChoice />
+              </Route>
+              <Route exact path={summary(':id')}>
+                <Summary />
+              </Route>
+              <Route exact path={ticket(':id')}>
+                <Ticket />
+              </Route>
+            </Switch>
+          </Router>
+        </Main>
       )}
     </div>
   );
