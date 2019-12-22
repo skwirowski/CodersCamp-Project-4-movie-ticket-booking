@@ -1,0 +1,9 @@
+.seatings {
+  width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.seatings__seat {
+  height: 50px;
+  width: 50px;
+}
