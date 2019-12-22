@@ -6,70 +6,70 @@ const Footer = () => {
       <div className="footer-columns">
         <ul>
           <li>
-            <a href="#">ABOUT US</a>
+            <a href="/">ABOUT US</a>
           </li>
           <li>
-            <a href="#">About us</a>
+            <a href="/">About us</a>
           </li>
           <li>
-            <a href="#">Cinemas</a>
+            <a href="/">Cinemas</a>
           </li>
           <li>
-            <a href="#">Redaction</a>
+            <a href="/">Redaction</a>
           </li>
           <li>
-            <a href="#">Help/Contact</a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="#">OFFER</a>
-          </li>
-          <li>
-            <a href="#">Ajmax VR</a>
-          </li>
-          <li>
-            <a href="#">Mobile app</a>
-          </li>
-          <li>
-            <a href="#">VIP</a>
-          </li>
-          <li>
-            <a href="#">SuperVIP</a>
+            <a href="/">Help/Contact</a>
           </li>
         </ul>
         <ul>
           <li>
-            <a href="#">CAREER</a>
+            <a href="/">OFFER</a>
           </li>
           <li>
-            <a href="#">Why us?</a>
+            <a href="/">Ajmax VR</a>
           </li>
           <li>
-            <a href="#">Career path</a>
+            <a href="/">Mobile app</a>
           </li>
           <li>
-            <a href="#">FAQ</a>
+            <a href="/">VIP</a>
           </li>
           <li>
-            <a href="#">Job offers</a>
+            <a href="/">SuperVIP</a>
           </li>
         </ul>
         <ul>
           <li>
-            <a href="#">INFORMATION</a>
+            <a href="/">CAREER</a>
           </li>
           <li>
-            <a href="#">Regulations</a>
+            <a href="/">Why us?</a>
           </li>
           <li>
-            <a href="#">Privacy policy</a>
+            <a href="/">Career path</a>
           </li>
           <li>
-            <a href="#">Movies</a>
+            <a href="/">FAQ</a>
           </li>
           <li>
-            <a href="#">Genres</a>
+            <a href="/">Job offers</a>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <a href="/">INFORMATION</a>
+          </li>
+          <li>
+            <a href="/">Regulations</a>
+          </li>
+          <li>
+            <a href="/">Privacy policy</a>
+          </li>
+          <li>
+            <a href="/">Movies</a>
+          </li>
+          <li>
+            <a href="/">Genres</a>
           </li>
         </ul>
       </div>
