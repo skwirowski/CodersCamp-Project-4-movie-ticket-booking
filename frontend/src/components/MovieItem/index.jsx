@@ -1,20 +1,18 @@
 import React from 'react';
 // import './VideoItem.css';
 
-const MovieItem = ({ movie, onMovieSelect }) => {
-
+const MovieItem = ({ movie }) => {
+  const posterUrl = 'https://image.tmdb.org/t/p/w500';
   return (
-    <div>
-       {/* onClick={() => onMovieSelect(movie)} className="movie-item" > */}
-      {/* <img 
+    <div className="movie-item">
+      <img 
         className="image" 
-        alt={video.snippet.title}  
-        src={video.snippet.thumbnails.medium.url}
-      /> */}
-      image
+        alt={movie.release_date}  
+        src={`${posterUrl}${movie.poster_path}`}
+      />
       <div className="content">
-        description
-        {/* <div className="header">{video.snippet.title}</div> */}
+        <div className="header">{movie.title}</div>
+        <div className="">{movie.overview}</div>
       </div>
     </div>
   )
