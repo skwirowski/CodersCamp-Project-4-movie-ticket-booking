@@ -7,6 +7,8 @@
   --main-gray: rgba(153, 153, 153);
 }
 
+/* Global */
+
 * {
   box-sizing: border-box;
   text-decoration: none;
