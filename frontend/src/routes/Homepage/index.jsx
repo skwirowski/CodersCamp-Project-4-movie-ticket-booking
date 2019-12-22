@@ -34,12 +34,20 @@ const Homepage = () => {
 console.log(movies) // delete this
 
   return (
-    <div className=" homepage-container">
-      <header>
-        <span>POLECANE FILMY</span>
-        <a href="/">Sprawdź repertuar</a>
-      </header>
-      <MovieList movies={movies}/>
+    <div className="ui container">
+      <div className="ui grid">
+        <div className="ui row">
+          <div className="twelve wide column">
+            <span>POLECANE FILMY</span>
+          </div>  
+          <div className="four wide column">
+            <a href="/">Sprawdź repertuar</a>
+          </div>
+        </div>
+        <div className="ui row">    
+          <MovieList movies={movies}/>
+        </div>
+      </div>
     </div>
   );
 };

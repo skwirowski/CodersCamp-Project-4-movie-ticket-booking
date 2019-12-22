@@ -1,0 +1,11 @@
+.movie {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center !important;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.movie img {
+  max-width: 180px;
+}

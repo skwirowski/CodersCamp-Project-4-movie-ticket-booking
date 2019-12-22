@@ -4,10 +4,13 @@ import MovieItem from 'components/MovieItem';
 const MovieList = ({ movies }) => {
   
   const renderedList = movies.map(movie =>
-    <MovieItem movie={movie} key={movie.id}/>)
+    <div className="column">
+      <MovieItem movie={movie} key={movie.id}/>
+    </div>
+    )
 
   return (
-    <div className="ui relaxed divided list">
+    <div className="ui four column grid">
       {renderedList}
     </div>
   );

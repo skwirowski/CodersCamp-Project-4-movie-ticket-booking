@@ -1,18 +1,17 @@
 import React from 'react';
-// import './VideoItem.css';
+import 'css/MovieItem.css';
 
 const MovieItem = ({ movie }) => {
   const posterUrl = 'https://image.tmdb.org/t/p/w500';
   return (
-    <div className="movie-item">
+    <div className="ui fluid cards movie">
       <img 
         className="image" 
         alt={movie.release_date}  
         src={`${posterUrl}${movie.poster_path}`}
       />
       <div className="content">
-        <div className="header">{movie.title}</div>
-        <div className="">{movie.overview}</div>
+        <span className="header">{movie.title}</span>
       </div>
     </div>
   )
