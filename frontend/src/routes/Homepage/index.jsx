@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import MovieList from 'components/MovieList';
 import SearchBox from 'components/SearchBox';
+import Carousel from 'components/Carousel';
+
 import moviesApi from 'static/moviesAPI';
 
 const Homepage = () => {
@@ -14,7 +16,8 @@ const Homepage = () => {
   }, []);
 
   return (
-    <div className="ui container">
+    <div className="ui fluid container">
+      <Carousel movies={movies.slice(0,8)} />
       <div className="ui grid">
         <div className="ui row">
           <div className="eleven wide column">
