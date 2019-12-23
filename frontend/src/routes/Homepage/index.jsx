@@ -3,25 +3,6 @@ import MovieList from 'components/MovieList';
 import SearchBox from 'components/SearchBox';
 import moviesApi from 'static/moviesAPI';
 
-// import { Link } from 'react-router-dom';
-
-// import routes from 'static/routes';
-
-// const Homepage = () => {
-//   //* destructure object keys
-//   const { details } = routes;
-//   //*
-//   const temporaryMovieId = 'frozen2';
-
-//   return (
-//     <>
-//       <h2>Homepage</h2>
-//       <Link to={details(temporaryMovieId)}>See details page</Link>
-//     </>
-//   );
-// };
-
-// eslint-disable-next-line react/prefer-stateless-function
 const Homepage = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {

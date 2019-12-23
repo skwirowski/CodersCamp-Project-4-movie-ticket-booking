@@ -6,7 +6,7 @@ const Main = props => {
   return (
     <div className="ui fluid container">
       <Header />
-        <div className="ui container">{props.children}</div>
+      <div className="ui container">{props.children}</div>
       <Footer />
     </div>
   );
