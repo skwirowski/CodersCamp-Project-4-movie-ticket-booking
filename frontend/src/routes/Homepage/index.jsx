@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import MovieList from 'components/MovieList';
+import SearchBox from 'components/SearchBox';
 import moviesApi from 'static/moviesAPI';
 
 // import { Link } from 'react-router-dom';
@@ -31,21 +32,27 @@ const Homepage = () => {
     return () => controller.abort();
   }, []);
 
-console.log(movies) // delete this
-
   return (
     <div className="ui container">
       <div className="ui grid">
         <div className="ui row">
-          <div className="twelve wide column">
-            <span>POLECANE FILMY</span>
-          </div>  
-          <div className="four wide column">
-            <a href="/">Sprawdź repertuar</a>
+          <div className="eleven wide column">
+            <h2 className="ui left aligned header">what's on</h2>
+          </div>
+          <div className="five wide column">
+            <SearchBox />
           </div>
         </div>
-        <div className="ui row">    
-          <MovieList movies={movies}/>
+        <div className="ui row">
+          <MovieList movies={movies.slice(0,8)} />
+        </div>
+        <div className="ui row">
+          <div className="eleven wide column">
+            <h2 className="ui left aligned header">ajmax presents</h2>
+          </div>
+        </div>
+        <div className="ui row">
+          <MovieList movies={movies.slice(8,16)} />
         </div>
       </div>
     </div>

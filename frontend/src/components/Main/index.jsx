@@ -4,11 +4,11 @@ import Footer from 'components/Footer';
 
 const Main = props => {
   return (
-    <main>
+    <div className="ui fluid container">
       <Header />
-      <section style={{margin: '0 10rem'}}>{props.children}</section>
+        <div className="ui container">{props.children}</div>
       <Footer />
-    </main>
+    </div>
   );
 };
 
