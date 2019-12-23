@@ -25,39 +25,53 @@ const SeatingChoice = () => {
   };
 
   const handleSaveDataButtonChange = () => {
-    putRequest(spots);
+    async function updateSpots() {
+      await putRequest(spots);
+      const response = await getRequest();
+      await setSpots(response);
+    }
+    updateSpots();
   };
 
   return (
     <>
-      <h2>Seating Choice</h2>
+      <h2 className="seating-choice-heading">Seating Choice</h2>
+      <div className="screen">SCREEN</div>
       <div className="seatings">
-        {spots.map(seat => {
+        {spots.map((seat, index) => {
           const { id, num, row, checked } = seat;
 
           return (
-            <div key={id} className="seatings__seat">
-              <label htmlFor={id} className="seatings__seat-label">
-                {num}
-              </label>
-              <input
-                id={id}
-                className="seatings__seat-input"
-                type="checkbox"
-                value={checked}
-                disabled={checked}
-                onChange={handleCheckboxChange}
-              />
+            <div key={id} className="seatings-container">
+              {index % 10 === 0 ? (
+                <div className="seatings__row">{row}</div>
+              ) : null}
+
+              <div className="seatings__seat">
+                <input
+                  id={id}
+                  className="seatings__seat-input"
+                  type="checkbox"
+                  value={checked}
+                  disabled={checked}
+                  onChange={handleCheckboxChange}
+                />
+                <label htmlFor={id} className="seatings__seat-label">
+                  {num}
+                </label>
+              </div>
             </div>
           );
         })}
+        <div className="seatings__legend">
+          <div className="seatings__legend-spot" />
+          <span className="seatings__legend-description">seat taken</span>
+        </div>
       </div>
       <button
+        className="temporary-button-seats-save"
         type="button"
-        onClick={() => {
-          handleSaveDataButtonChange();
-          console.log('PUT request successful');
-        }}
+        onClick={handleSaveDataButtonChange}
       >
         Temporary SAVE button
       </button>

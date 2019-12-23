@@ -1,10 +1,114 @@
+// settings and variables
+@import '../../../static/styles/settings.less';
+@free-spot-background: #358e72;
+@taken-spot-background: #e1e1e1;
+@selected-spot-background: #000000;
+
+.initial-style-mix {
+  font-family: @primary-font-family;
+  font-weight: @primary-font-weight-regular;
+  color: @primary-font-color;
+  box-sizing: border-box;
+}
+
+.single-spot-style-mix {
+  height: 46px;
+  width: 46px;
+  box-sizing: border-box;
+  margin: 2px;
+}
+
+.flex-default-mix {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// end
+
+.seating-choice-heading {
+  .initial-style-mix();
+}
+
+.screen {
+  .flex-default-mix();
+  height: 23px;
+  width: 400px;
+  background-color: @taken-spot-background;
+  .initial-style-mix();
+  margin: 50px auto;
+}
+
 .seatings {
-  width: 500px;
+  width: 550px;
   display: flex;
   flex-wrap: wrap;
+  .initial-style-mix();
+  margin: auto;
+
+  &-container {
+    display: flex;
+  }
+
+  &__row {
+    .flex-default-mix();
+    font-size: 1.2rem;
+    .single-spot-style-mix();
+  }
 
   &__seat {
-    height: 50px;
-    width: 50px;
+    position: relative;
+    .single-spot-style-mix();
+
+    &-label {
+      .flex-default-mix();
+      height: 100%;
+      width: 100%;
+      color: transparent;
+      background-color: @free-spot-background;
+    }
+
+    &-input {
+      visibility: hidden;
+      position: absolute;
+      top: 40%;
+      left: 40%;
+      margin: 0;
+
+      &:checked+label {
+        font-size: 1.5rem;
+        font-weight: @primary-font-weight-bold;
+        color: #ffffff;
+        background-color: @selected-spot-background;
+      }
+
+      &:disabled+label {
+        color: transparent;
+        background-color: @taken-spot-background;
+      }
+    }
   }
+
+  &__legend {
+    width: 100%;
+    margin-top: 25px;
+    .flex-default-mix();
+
+    &-spot {
+      height: 46px;
+      width: 46px;
+      background-color: @taken-spot-background;
+      box-sizing: border-box;
+      margin: 2px;
+    }
+
+    &-description {
+      margin-left: 15px;
+    }
+  }
+}
+
+.temporary-button-seats-save {
+  display: block;
+  margin: 50px auto 0 auto;
 }
