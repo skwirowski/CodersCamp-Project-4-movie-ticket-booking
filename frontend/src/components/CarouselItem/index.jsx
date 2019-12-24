@@ -3,7 +3,15 @@ import React from 'react';
 
 const CarouselItem = ({ movie }) => {
   const posterUrl = 'https://image.tmdb.org/t/p/w500';
-  return <img src={`${posterUrl}${movie.poster_path}`} width="1100" height="500"/>
+  return (
+    <div className="carousel-item">
+      <img src={`${posterUrl}${movie.poster_path}`}/>
+      <div className="content">
+        <h2>{movie.title}</h2>
+        <p>{movie.overview}</p>
+      </div>
+    </div>
+  )
 }
 
 export default CarouselItem;

@@ -1,5 +1,5 @@
 import React from 'react';
-import 'css/SearchBox.css'
+
 const SearchBox = () => {
   return (
     <div class="ui right aligned transparent big fluid icon input">

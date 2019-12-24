@@ -1,0 +1,43 @@
+.carousel-item {
+  width: 100%;
+  height:400px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.carousel-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.carousel-item .content {
+  position: absolute;
+  bottom: 50px;
+  height: 100px;
+  overflow: auto;
+  z-index: 1;
+  margin: 0 10rem;
+}
+
+.carousel-item .content h2 {
+  text-transform: uppercase!important;
+}
+
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 30px;
+
+}
+
+
+

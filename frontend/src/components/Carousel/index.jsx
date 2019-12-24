@@ -2,17 +2,14 @@ import React, { useState, useEffect } from 'react';
 import CarouselItem from 'components/CarouselItem';
 import { Link } from 'react-router-dom';
 import routes from 'static/routes';
-import logo from 'static/svg/logo.svg';
+import bg from 'static/img/bg.jpg';
+import 'css/Carousel.css';
 
   
 const Carousel = ({ movies }) => {
 
   // const { details } = routes;
-  const renderedList = movies.map(movie => 
-    <div className="carousel-item">
-      <CarouselItem movie={movie}/>
-    </div>
-    )
+  const renderedList = movies.map(movie => <CarouselItem movie={movie}/>);
 
   const indicators = movies.map((movie, i) => 
     <li data-target="#slider" data-slide-to={i+1}></li>
@@ -29,7 +26,7 @@ const Carousel = ({ movies }) => {
       {/* <!-- The slideshow --> */}
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src={logo} alt="Los Angeles" width="1100" height="500"/>
+          <img src={bg}/>
         </div>
           {renderedList}
       </div>
