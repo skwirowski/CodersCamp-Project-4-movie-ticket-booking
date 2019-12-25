@@ -16,30 +16,28 @@ const Homepage = () => {
   }, []);
 
   return (
-    <div className="ui fluid container">
+    <div className="container-fluid">
       <Carousel movies={movies.slice(0,8)} />
-      <div className="ui container">
-        <div className="ui grid">
-          <div className="ui row">
-            <div className="eleven wide column">
-              <h2 className="ui left aligned header">what's on</h2>
+      <div className="container">
+          <div className="row">
+            <div className="col-8">
+              <h3 className="movies-header">what's on</h3>
             </div>
-            <div className="five wide column">
+            <div className="col-4">
               <SearchBox />
             </div>
           </div>
-          <div className="ui row">
+          <div className="row">
             <MovieList movies={movies.slice(0,8)} />
           </div>
-          <div className="ui row">
-            <div className="eleven wide column">
-              <h2 className="ui left aligned header">ajmax presents</h2>
+          <div className="row">
+            <div className="col">
+              <h3 className="movies-header">ajmax presents</h3>
             </div>
           </div>
-          <div className="ui row">
+          <div className="row">
             <MovieList movies={movies.slice(8,16)} />
           </div>
-        </div>
       </div>
     </div>
   );

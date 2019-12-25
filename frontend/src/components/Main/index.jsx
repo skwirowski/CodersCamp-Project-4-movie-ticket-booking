@@ -4,9 +4,9 @@ import Footer from 'components/Footer';
 
 const Main = props => {
   return (
-    <div className="ui fluid container">
+    <div className="container-fluid">
       <Header />
-      <div className="ui fluid container">{props.children}</div>
+      <div className="container-fluid">{props.children}</div>
       <Footer />
     </div>
   );

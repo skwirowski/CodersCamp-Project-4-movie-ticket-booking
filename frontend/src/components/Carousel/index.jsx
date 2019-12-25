@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import CarouselItem from 'components/CarouselItem';
-import { Link } from 'react-router-dom';
-import routes from 'static/routes';
 import bg from 'static/img/bg.jpg';
 import 'css/Carousel.css';
 
@@ -26,7 +24,7 @@ const Carousel = ({ movies }) => {
       {/* <!-- The slideshow --> */}
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src={bg}/>
+          <img src={bg} alt="background"/>
         </div>
           {renderedList}
       </div>

@@ -5,7 +5,9 @@
   --main-dark: rgba(20, 20, 20);
   --main-deep-dark: rgba(0, 0, 0);
   --main-gray: rgba(153, 153, 153);
-  --main-shadow: rgba(153, 153, 153, 0.2)
+  --main-shadow: rgba(153, 153, 153, 0.2);
+  --main-text: rgba(250,250,250,0.7);
+
 }
 
 /* Global */
@@ -15,7 +17,7 @@
   text-decoration: none;
 }
 
-.ui.fluid.container {
+.container-fluid {
   padding: 0;
 }
 
@@ -41,7 +43,6 @@ body {
   position: relative;
   height: 5rem;
   z-index: 1;
-  margin: 0 10rem;
 }
 
 .header-top {
@@ -66,23 +67,20 @@ body {
  /* Footer */
 .footer-container {
   background: var(--main-dark);
-  padding-top: 10rem;
+  padding-top: 7rem;
   color: #999;
 }
 
 .footer-columns {
   width: 70%;
   margin: 1rem auto 0;
-  font-size: 1.1rem;
-  overflow: auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  font-size: 1.05rem;
   padding-bottom: 2rem;
 }
 
 .footer-columns ul li {
   list-style: none;
-  line-height: 2.1;
+  line-height: 2;
 }
 
 .footer-columns ul li a {

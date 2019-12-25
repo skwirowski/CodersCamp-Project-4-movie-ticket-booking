@@ -22,8 +22,8 @@
 .carousel-item .content {
   position: absolute;
   bottom: 50px;
-  height: 100px;
-  overflow: auto;
+  min-height: 100px;
+  /* overflow: auto; */
   z-index: 1;
   margin: 0 10rem;
 }
@@ -36,7 +36,6 @@
 .carousel-indicators {
   position: absolute;
   bottom: 30px;
-
 }
 
 

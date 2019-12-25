@@ -1,17 +1,17 @@
 import React from 'react';
-import 'css/MovieItem.css';
+import 'css/Homepage.css';
 
 const MovieItem = ({ movie }) => {
   const posterUrl = 'https://image.tmdb.org/t/p/w500';
   return (
-    <div className="ui item movie-item">
+    <div className="movie-item">
       <img 
-        className="ui small image" 
+        className="img-thumbnail mx-auto d-block img-fluid" 
         alt={movie.release_date}  
         src={`${posterUrl}${movie.poster_path}`}
       />
-      <div className="ui segment">
-        <div className="ui center aligned header movie-header"><span>{movie.title}</span></div>
+      <div className="segment">
+        <div className="movie-title"><span>{movie.title}</span></div>
       </div>
     </div>
   )

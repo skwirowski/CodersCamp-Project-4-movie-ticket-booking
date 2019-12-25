@@ -44,7 +44,7 @@ const App = () => {
   //*
 
   return (
-    <div className="main-container">
+    <div className="container-fluid">
       {moviesListLoading ? (
         <h1>Loading...</h1>
       ) : (
