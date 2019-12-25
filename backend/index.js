@@ -1,13 +1,8 @@
-const config = require('config')
 const mongoose = require('mongoose')
 const express = require('express')
+const movies = require('./routes/movies')
 
 const app = express()
-
-if (!config.get('jwtPrivateKey')) {
-  console.log('FATAL ERROR: jwtPrivateKey is not defined.')
-  process.exit(1)
-}
 
 mongoose
   .connect('mongodb://localhost/cinema', {
@@ -21,3 +16,4 @@ const port = process.env.PORT || 3000
 app.listen(port, () => console.log(`Listening on port ${port}...`))
 
 app.use(express.json())
+app.use('/api/movies', movies)
