@@ -18,6 +18,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   const { error } = validation(req.body)
   if (error) return res.status(400).send(error.details[0].message)
+
   const {
     title,
     desc,
@@ -27,13 +28,17 @@ router.post('/', async (req, res) => {
     director,
     image,
   } = req.body
+  const findTitle = await Movies.findOne({ title: new RegExp(title, 'i') })
+  if (findTitle)
+    return res.status(400).send('A movie with this title already exists.')
+
   let movie = new Movies({
     title: title,
     desc: desc,
-    category: [category],
+    category: category,
     duration: duration,
     premiere: premiere,
-    director: [director],
+    director: director,
     image: image,
   })
 
@@ -53,13 +58,24 @@ router.put('/:id', async (req, res) => {
   const { error } = validation(req.body)
   if (error) return res.status(400).send(error.details[0].message)
 
-  const { title, desc, category, image } = req.body
+  const {
+    title,
+    desc,
+    category,
+    duration,
+    premiere,
+    director,
+    image,
+  } = req.body
   const task = await Movies.findByIdAndUpdate(
     req.params.id,
     {
       title: title,
       desc: desc,
-      category: category,
+      category: [category],
+      duration: duration,
+      premiere: premiere,
+      director: [director],
       image: image,
     },
     { new: true }
