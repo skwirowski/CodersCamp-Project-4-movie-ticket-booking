@@ -7,10 +7,10 @@ import 'css/Carousel.css';
 const Carousel = ({ movies }) => {
 
   // const { details } = routes;
-  const renderedList = movies.map(movie => <CarouselItem movie={movie}/>);
+  const renderedList = movies.map(movie => <CarouselItem movie={movie} key={movie.id}/>);
 
   const indicators = movies.map((movie, i) => 
-    <li data-target="#slider" data-slide-to={i+1}></li>
+    <li data-target="#slider" data-slide-to={i+1} key={i+1}></li>
     )
   return (
     <div id="slider" className="carousel slide" data-ride="carousel">

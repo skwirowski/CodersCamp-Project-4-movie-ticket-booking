@@ -7,11 +7,18 @@ import moviesApi from 'static/moviesAPI';
 
 const Homepage = () => {
   const [movies, setMovies] = useState([]);
+
   useEffect(() => {
     const controller = new AbortController();
-    fetch(`${moviesApi}`)
+
+    fetch(`${moviesApi}`, {signal: controller.signal})
       .then(res => res.json())
-      .then(json => setMovies(json.results));
+      .then(json => setMovies(json.results))
+      .catch(err => {
+        if (err.name === 'AbortError') {
+          return
+        }
+      })
     return () => controller.abort();
   }, []);
 
