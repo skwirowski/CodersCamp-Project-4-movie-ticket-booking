@@ -22,8 +22,6 @@ const Homepage = () => {
     return () => controller.abort();
   }, []);
 
-  console.log(movies);
-
   return (
     <div className="container-fluid">
       <Carousel movies={movies.slice(0,8)} />

@@ -5,9 +5,9 @@ const MovieItem = ({ movie }) => {
   const posterUrl = 'https://image.tmdb.org/t/p/w500';
   return (
     <div className="movie-item">
-      <img 
-        className="img-thumbnail mx-auto d-block img-fluid" 
-        alt={movie.release_date}  
+      <img
+        className="img-thumbnail mx-auto d-block img-fluid"
+        alt={movie.release_date}
         src={`${posterUrl}${movie.poster_path}`}
       />
       <div className="segment">
