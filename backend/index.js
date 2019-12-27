@@ -2,6 +2,9 @@ const mongoose = require('mongoose')
 const express = require('express')
 const movies = require('./routes/movies')
 const rooms = require('./routes/rooms')
+const user = require("./routes/user");
+const login = require("./routes/login");
+
 
 const app = express()
 
