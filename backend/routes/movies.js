@@ -72,10 +72,10 @@ router.put('/:id', async (req, res) => {
     {
       title: title,
       desc: desc,
-      category: [category],
+      category: category,
       duration: duration,
       premiere: premiere,
-      director: [director],
+      director: director,
       image: image,
     },
     { new: true }
