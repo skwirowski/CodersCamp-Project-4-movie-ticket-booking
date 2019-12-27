@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="container-fluid footer-container">
       <div className="row footer-columns">
-        <ul className="col">
+        <ul className="col-md-3 col-6">
           <li>
             <a href="/">ABOUT US</a>
           </li>
@@ -21,7 +21,7 @@ const Footer = () => {
             <a href="/">Help/Contact</a>
           </li>
         </ul>
-        <ul className="col">
+        <ul className="col-md-3 col-6">
           <li>
             <a href="/">OFFER</a>
           </li>
@@ -38,7 +38,7 @@ const Footer = () => {
             <a href="/">SuperVIP</a>
           </li>
         </ul>
-        <ul className="col">
+        <ul className="col-md-3 col-6">
           <li>
             <a href="/">CAREER</a>
           </li>
@@ -55,7 +55,7 @@ const Footer = () => {
             <a href="/">Job offers</a>
           </li>
         </ul>
-        <ul className="col">
+        <ul className="col-md-3 col-6">
           <li>
             <a href="/">INFORMATION</a>
           </li>

@@ -8,7 +8,7 @@ const MovieList = ({ movies }) => {
   const { details } = routes;
   const renderedList = movies.map(movie =>
     
-    <div className="column col-3" key={movie.id}>
+    <div className="column col-xl-3 col-4" key={movie.id}>
       <Link to={details(movie.id)}>
         <MovieItem movie={movie} />
       </Link>

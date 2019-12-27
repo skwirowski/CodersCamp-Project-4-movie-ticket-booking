@@ -1,15 +1,27 @@
 import React from 'react';
-// import 'css/MovieItem.css';
+import { posterUrl } from 'static/moviesAPI';
 
-const CarouselItem = ({ movie }) => {
-  const posterUrl = 'https://image.tmdb.org/t/p/w500';
+const CarouselItemGenre = ({ genre }) => {
+  return (<div className="genre">{genre}</div>)
+}
+  
+const CarouselItem = ({ movie, movieGenres }) => {
+  const renderedList = movieGenres.map((genre, i) =>
+     <div key={i}>
+      <CarouselItemGenre genre={genre} />
+    </div>
+    )
+
   return (
-    <div className="carousel-item" >
-      <img  className="img-fluid" alt={movie.title} src={`${posterUrl}${movie.poster_path}`} />
-      <div className="content">
+    <div className="carousel-item row" >
+      <div className="content text-uppercase col-4">
         <h2>{movie.title}</h2>
-        <p>{movie.overview}</p>
+        <div className="genres">
+          {renderedList} 
+        </div>
       </div>
+      <img  className="img-fluid col-4" alt={movie.title} src={`${posterUrl}${movie.poster_path}`} />
+        <a href="/" className="btn">BOOK</a>
     </div>
   )
 }

@@ -1,13 +1,24 @@
 import React from 'react';
 import CarouselItem from 'components/CarouselItem';
+
 import bg from 'static/img/bg.jpg';
 import 'css/Carousel.css';
 
-  
-const Carousel = ({ movies }) => {
+const Carousel = ({ movies, genres }) => {
 
   // const { details } = routes;
-  const renderedList = movies.map(movie => <CarouselItem movie={movie} key={movie.id}/>);
+  const renderedGenres = genres.map(genre => genre);
+  const renderedMovies = movies.map(movie => {
+    let movieGenres = [];
+    for (let i of movie.genre_ids) {
+      for (let j of renderedGenres) {
+        if (i === j['id']) {
+          movieGenres.push(j['name'])
+        }
+      }
+    }
+    return <CarouselItem movie={movie} movieGenres={movieGenres} key={movie.id}/>
+  });
 
   const indicators = movies.map((movie, i) => 
     <li data-target="#slider" data-slide-to={i+1} key={i+1}></li>
@@ -26,7 +37,7 @@ const Carousel = ({ movies }) => {
         <div className="carousel-item active">
           <img src={bg} alt="background"/>
         </div>
-          {renderedList}
+          {renderedMovies}
       </div>
         {/* <!-- Left and right controls --> */}
         <a className="carousel-control-prev" href="#slider" data-slide="prev">

@@ -3,10 +3,11 @@ import MovieList from 'components/MovieList';
 import SearchBox from 'components/SearchBox';
 import Carousel from 'components/Carousel';
 
-import moviesApi from 'static/moviesAPI';
+import moviesApi, { endpointGetGenres } from 'static/moviesAPI';
 
 const Homepage = () => {
   const [movies, setMovies] = useState([]);
+  const [genres, setGenres] = useState([]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -22,9 +23,23 @@ const Homepage = () => {
     return () => controller.abort();
   }, []);
 
+  useEffect(() => {
+    const controller = new AbortController();
+
+    fetch(`${endpointGetGenres}`, {signal: controller.signal})
+      .then(res => res.json())
+      .then(json => setGenres(json.genres))
+      .catch(err => {
+        if (err.name === 'AbortError') {
+          return
+        }
+      })
+    return () => controller.abort();
+  }, []);
+ 
   return (
     <div className="container-fluid">
-      <Carousel movies={movies.slice(0,8)} />
+      <Carousel movies={movies.slice(0,8)} genres={genres}/>
       <div className="container">
           <div className="row">
             <div className="col-8">
