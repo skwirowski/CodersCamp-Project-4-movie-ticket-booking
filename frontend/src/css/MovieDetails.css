@@ -1,0 +1,8 @@
+.movie-details-title {
+    font-size: 1.2rem;
+    color: var(--main-gray);
+    text-decoration: rgba(250,250,250,0.3);
+    text-decoration-line: underline;
+    text-align: center;
+    margin: 10px auto 20px auto;
+  }

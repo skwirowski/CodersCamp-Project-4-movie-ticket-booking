@@ -1,5 +1,5 @@
 import React from 'react';
-import 'css/Homepage.css';
+import 'css/MovieDetails.css';
 
 const MovieDetails = (props) => {
     return (
@@ -11,12 +11,12 @@ const MovieDetails = (props) => {
                     src={props.image} />
                 </div>
                 <div className="col-8">
-                    <div className="movie-title">
+                    <div className="movie-details-title">
                         <span>{props.title}</span>
                     </div>
-                    <span className="vote">{props.vote}</span>
-                    <div className="date">{props.releaseDate}</div>
-                    <div className="text">{props.content}</div>
+                    <span className="vote">Rating: {props.vote}</span>
+                    <div className="date">Relase Date: {props.releaseDate}</div>
+                    <div className="text">Description: {props.content}</div>
                 </div>
             </div>
         </div>

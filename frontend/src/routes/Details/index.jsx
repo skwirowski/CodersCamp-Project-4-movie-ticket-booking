@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import moviesApi from 'static/moviesAPI';
+import { apiUrl, apiKey } from 'static/moviesAPI';
 import routes from 'static/routes';
 import MovieDetails from 'components/MovieDetails';
 
@@ -14,9 +14,9 @@ const Details = (props) => {
   useEffect(() => {
     const controller = new AbortController();
 
-    fetch(`${moviesApi}`, { signal: controller.signal })
+    fetch(`${apiUrl}${id}?api_key=${apiKey}`, { signal: controller.signal })
       .then(res => res.json())
-      .then(json => setMovies(json.results))
+      .then(json => setMovies(json))
       .catch(err => {
         if (err.name === 'AbortError') {
           return
@@ -25,7 +25,6 @@ const Details = (props) => {
     return () => controller.abort();
   }, []);
 
-  console.log(movies);
 
   const posterUrl = 'https://image.tmdb.org/t/p/w500';
 
