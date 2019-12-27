@@ -1,14 +1,13 @@
 import React from 'react';
 import CarouselItem from 'components/CarouselItem';
-
 import bg from 'static/img/bg.jpg';
 import 'css/Carousel.css';
 
 const Carousel = ({ movies, genres }) => {
 
-  // const { details } = routes;
   const renderedGenres = genres.map(genre => genre);
   const renderedMovies = movies.map(movie => {
+
     let movieGenres = [];
     for (let i of movie.genre_ids) {
       for (let j of renderedGenres) {

@@ -38,6 +38,8 @@
 .carousel-item .content h2 {
   font-size: 1.5rem;
   letter-spacing: 0.2rem;
+  text-decoration: none;
+  color: #fff
 }
 
 
