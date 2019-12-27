@@ -17,6 +17,10 @@ const MovieDetails = (props) => {
                     <span className="vote">Rating: {props.vote}</span>
                     <div className="date">Relase Date: {props.releaseDate}</div>
                     <div className="text">Description: {props.content}</div>
+                    <iframe className="trailer"
+                    src={`https://www.youtube.com/embed/${props.trailers}?rel=0&amp;showinfo=0`} frameborder="0" allowfullsrenn>
+
+                    </iframe>
                 </div>
             </div>
         </div>

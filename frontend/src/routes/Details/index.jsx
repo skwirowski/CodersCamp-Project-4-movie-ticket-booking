@@ -10,6 +10,7 @@ const Details = (props) => {
   const { homepage, dateSelection } = routes;
   //*
   const [movies, setMovies] = useState([]);
+  const [trailers, setTrailers] = useState([]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -17,6 +18,14 @@ const Details = (props) => {
     fetch(`${apiUrl}${id}?api_key=${apiKey}`, { signal: controller.signal })
       .then(res => res.json())
       .then(json => setMovies(json))
+      .catch(err => {
+        if (err.name === 'AbortError') {
+          return
+        }
+      })
+      fetch(`${apiUrl}${id}/videos?api_key=${apiKey}`, { signal: controller.signal })
+      .then(res => res.json())
+      .then(json => setTrailers(json.results))
       .catch(err => {
         if (err.name === 'AbortError') {
           return
@@ -36,11 +45,14 @@ const Details = (props) => {
         vote={movies.vote_average}
         releaseDate={movies.release_date}
         content={movies.overview}
+        trailers={trailers[0]? trailers[0].key : null}
         />
       <button><Link to={dateSelection(id)}>See date selection page</Link></button>
       <button><Link to={homepage}>Go back</Link></button>
     </div>
   );
 };
+
+
 
 export default Details;
