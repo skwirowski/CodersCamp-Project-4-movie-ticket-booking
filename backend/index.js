@@ -2,8 +2,8 @@ const mongoose = require('mongoose')
 const express = require('express')
 const movies = require('./routes/movies')
 const rooms = require('./routes/rooms')
-const user = require("./routes/user");
-const login = require("./routes/login");
+const user = require("./routes/user")
+const login = require("./routes/login")
 
 
 const app = express()
@@ -24,3 +24,5 @@ app.listen(port, () => console.log(`Listening on port ${port}...`))
 app.use(express.json())
 app.use('/api/movies', movies)
 app.use('/api/rooms', rooms)
+app.use("/api/user", user)
+app.use("/api/login", login)
