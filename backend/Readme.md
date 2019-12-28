@@ -1,6 +1,20 @@
 # Movie Ticket Booking Application
 
-## Back-end
+## Sections
+
+- [Run](#run-server)
+- [Testing api](#testing-api)
+- [Endpoints](#endpoints)
+
+## Endpoints
+
+- [Movies](#movies)
+- [Rooms](#rooms)
+- [Seats](#seats)
+- [Users](#users)
+- [Login](#login)
+
+---
 
 ### Run server:
 
@@ -22,7 +36,11 @@
 
 ### Endpoints
 
+---
+
 #### Movies
+
+---
 
 1. GET
 
@@ -73,7 +91,11 @@ http://localhost:3000/api/movies/{movies_id}
 http://localhost:3000/api/movies/{movies_id}
 ```
 
+---
+
 #### Rooms
+
+---
 
 1. GET
 
@@ -116,7 +138,11 @@ http://localhost:3000/api/rooms/{rooms_id}
 http://localhost:3000/api/rooms/{rooms_id}
 ```
 
+---
+
 #### Seats
+
+---
 
 1. GET
 
@@ -158,14 +184,21 @@ http://localhost:3000/api/rooms/{rooms_id}/seats/{seat_id}
 ```
 http://localhost:3000/api/rooms/{rooms_id}/seats/{seat_id}
 ```
+
+---
+
 ### Users
 
+---
+
 1. GET
+
 ```
 http://localhost:3000/api/users
 ```
 
 2. POST
+
 ```
 http://localhost:3000/api/users
 
@@ -189,8 +222,26 @@ http://localhost:3000/api/users
 	"password": STRING, REQUIRED
 }
 ```
+
 4. DELETE
 
 ```
 http://localhost:3000/api/users/{user_id}
+```
+
+---
+
+### Login
+
+---
+
+1. POST
+
+```
+http://localhost:3000/api/login
+
+{
+	"email": STRING, REQUIRED
+	"password": STRING, REQUIRED
+}
 ```
