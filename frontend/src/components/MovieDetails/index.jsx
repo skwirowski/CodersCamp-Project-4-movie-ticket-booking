@@ -17,10 +17,9 @@ const MovieDetails = (props) => {
                     src={props.image} />
                 </div>
                 <div className="col-8">
-                    <div class="content">
                         <div className="movie-details-title">
                             <span>{props.title}</span>
-                            <span className="vote"><i class="fas fa-star"></i> {props.vote}</span>
+                            <span className="vote"><i className="fas fa-star"></i> {props.vote}</span>
                             <br />
                             <span className="vote">Average rating</span>
                         </div>
@@ -37,7 +36,6 @@ const MovieDetails = (props) => {
                             frameBorder="0"
                             title={props.title}>
                         </iframe>
-                    </div>
                     <div>
                         <Link to={dateSelection(id)}><button className="btn">BOOK</button></Link>
                         <Link to={homepage}><button className="btn">GO BACK</button></Link>
