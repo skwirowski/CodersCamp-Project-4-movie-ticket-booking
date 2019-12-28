@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import routes from 'static/routes';
 
 const DateSelection = () => {
-  // const { id } = useParams();
  
   const { homepage, SeatingChoice } = routes;
 
