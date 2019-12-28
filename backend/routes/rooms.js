@@ -47,7 +47,7 @@ router.put('/:id', async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message)
 
   const { name, desc, seatsAvailable } = req.body
-  const task = await Rooms.findByIdAndUpdate(
+  const room = await Rooms.findByIdAndUpdate(
     req.params.id,
     {
       name: name,
@@ -57,9 +57,9 @@ router.put('/:id', async (req, res) => {
     { new: true }
   )
 
-  if (!task) return res.status(404).send(errorIdMsg)
+  if (!room) return res.status(404).send(errorIdMsg)
 
-  res.send(task)
+  res.send(room)
 })
 
 router.get('/:id/seats', async (req, res) => {
@@ -111,7 +111,6 @@ router.put('/:id/seats/:ids', async (req, res) => {
       },
     }
   )
-  console.log(editSeat)
   res.send(editSeat)
 })
 
