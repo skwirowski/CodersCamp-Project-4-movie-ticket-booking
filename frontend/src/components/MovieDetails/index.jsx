@@ -13,13 +13,22 @@ const MovieDetails = (props) => {
                 <div className="col-8">
                     <div className="movie-details-title">
                         <span>{props.title}</span>
+                        <span className="vote"><i class="fas fa-star"></i> {props.vote}</span>
+                        <br />
+                        <span className="vote">Average rating</span>
                     </div>
-                    <span className="vote">Rating: {props.vote}</span>
-                    <div className="date">Relase Date: {props.releaseDate}</div>
-                    <div className="text">Description: {props.content}</div>
+                    <div>
+                        <span className="text">Relase Date:  </span>
+                        <div> {props.releaseDate}</div>
+                    </div>
+                    <div>
+                        <span className="text">Description: </span>
+                        <div>{props.content}</div>
+                    </div>
                     <iframe className="trailer"
-                    src={`https://www.youtube.com/embed/${props.trailers}?rel=0&amp;showinfo=0`} frameborder="0" allowfullsrenn>
-
+                    src={`https://www.youtube.com/embed/${props.trailers}?rel=0&amp;showinfo=0`} 
+                    frameBorder="0" 
+                    title={props.title}>
                     </iframe>
                 </div>
             </div>

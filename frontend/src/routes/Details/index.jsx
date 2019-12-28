@@ -4,7 +4,7 @@ import { apiUrl, apiKey } from 'static/moviesAPI';
 import routes from 'static/routes';
 import MovieDetails from 'components/MovieDetails';
 
-const Details = (props) => {
+const Details = () => {
   const { id } = useParams();
   //* destructure object keys
   const { homepage, dateSelection } = routes;
@@ -34,6 +34,7 @@ const Details = (props) => {
     return () => controller.abort();
   }, []);
 
+  console.log(movies);
 
   const posterUrl = 'https://image.tmdb.org/t/p/w500';
 
@@ -43,6 +44,7 @@ const Details = (props) => {
         image={`${posterUrl}${movies.poster_path}`}
         title={movies.title}
         vote={movies.vote_average}
+        count={movies.vote_count}
         releaseDate={movies.release_date}
         content={movies.overview}
         trailers={trailers[0]? trailers[0].key : null}
