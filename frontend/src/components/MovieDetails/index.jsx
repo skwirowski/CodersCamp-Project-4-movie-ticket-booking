@@ -1,7 +1,13 @@
 import React from 'react';
+import { Link, useParams } from 'react-router-dom';
+import routes from 'static/routes';
 import 'css/MovieDetails.css';
 
 const MovieDetails = (props) => {
+    const { id } = useParams();
+
+    const { homepage, dateSelection } = routes;
+
     return (
         <div className="container">
             <div className="row">
@@ -30,6 +36,10 @@ const MovieDetails = (props) => {
                     frameBorder="0" 
                     title={props.title}>
                     </iframe>
+                    <div>
+                        <Link to={dateSelection(id)}><button className="btn">BOOK</button></Link>
+                        <Link to={homepage}><button className="btn">GO BACK</button></Link>
+                    </div>
                 </div>
             </div>
         </div>

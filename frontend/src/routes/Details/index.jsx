@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { apiUrl, apiKey } from 'static/moviesAPI';
-import routes from 'static/routes';
 import MovieDetails from 'components/MovieDetails';
 
 const Details = () => {
   const { id } = useParams();
   //* destructure object keys
-  const { homepage, dateSelection } = routes;
+  // const { homepage, dateSelection } = routes;
   //*
   const [movies, setMovies] = useState([]);
   const [trailers, setTrailers] = useState([]);
@@ -49,8 +48,6 @@ const Details = () => {
         content={movies.overview}
         trailers={trailers[0]? trailers[0].key : null}
         />
-      <button><Link to={dateSelection(id)}>See date selection page</Link></button>
-      <button><Link to={homepage}>Go back</Link></button>
     </div>
   );
 };

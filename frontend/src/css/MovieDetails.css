@@ -23,3 +23,23 @@
       width: 420px;
       height: 315px;
   }
+  .btn {
+    float: right;
+    z-index: 1;
+    box-shadow: 0px 0px 1px 1px #d30913;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid #d30913;
+    cursor: pointer;
+    color: #fff;
+    font-family: 'Roboto';
+    font-size: 1.2rem;
+    padding: 25px 20px;
+    margin: 20px 15px 40px 15px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #d30913;
+  }
+    .btn:hover {
+    background-color: rgba(250, 0, 0, 0.3);
+    color: white;
+  }
