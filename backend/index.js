@@ -2,9 +2,16 @@ const mongoose = require('mongoose')
 const express = require('express')
 const movies = require('./routes/movies')
 const rooms = require('./routes/rooms')
+<<<<<<< HEAD
 const user = require('./routes/user')
 const login = require('./routes/login')
 const shows = require('./routes/shows')
+=======
+const user = require("./routes/user")
+const login = require("./routes/login")
+//const config = require('config');
+
+>>>>>>> Minor improvements
 
 const app = express()
 
