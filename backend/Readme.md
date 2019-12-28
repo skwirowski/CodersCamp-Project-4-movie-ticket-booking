@@ -39,9 +39,10 @@ http://localhost:3000/api/movies/{movies_id}
 
 ```
 http://localhost:3000/api/movies/
+
 {
 	"title": STRING, REQUIRED,
-	"desc": STRING, REQUIRED,
+	"desc": STRING, REQUIRED,,
 	"category": ARRAY, REQUIRED,
 	"duration": NUMBER, REQUIRED,
 	"premiere": DATE, REQUIRED,
@@ -70,4 +71,90 @@ http://localhost:3000/api/movies/{movies_id}
 
 ```
 http://localhost:3000/api/movies/{movies_id}
+```
+
+#### Rooms
+
+1. GET
+
+```
+All rooms:
+http://localhost:3000/api/rooms/
+
+Single room:
+http://localhost:3000/api/rooms/{room_id}
+
+```
+
+2. POST
+
+```
+http://localhost:3000/api/rooms/
+
+{
+	"name": STRING, REQUIRED,
+	"desc": STRING, REQUIRED,
+	"seatsAvailable": NUMBER, REQUIRED
+}
+```
+
+3. PUT
+
+```
+http://localhost:3000/api/rooms/{rooms_id}
+
+{
+	"name": STRING, REQUIRED,
+	"desc": STRING, REQUIRED,
+	"seatsAvailable": NUMBER, REQUIRED
+}
+```
+
+4. DELETE
+
+```
+http://localhost:3000/api/rooms/{rooms_id}
+```
+
+#### Seats
+
+1. GET
+
+```
+All seats:
+http://localhost:3000/api/rooms/{room_id}/seats
+
+Single seat:
+http://localhost:3000/api/rooms/{room_id}/seats/{seat_id}
+
+```
+
+2. POST
+
+```
+http://localhost:3000/api/rooms/{room_id}/seats
+
+{
+	"num": NUMBER, REQUIRED,
+	"row": STRING, REQUIRED,
+	"checked": BOOLEN, REQUIRED
+}
+```
+
+3. PUT
+
+```
+http://localhost:3000/api/rooms/{rooms_id}/seats/{seat_id}
+
+{
+	"num": NUMBER, REQUIRED,
+	"row": STRING, REQUIRED,
+	"checked": BOOLEN, REQUIRED
+}
+```
+
+4. DELETE
+
+```
+http://localhost:3000/api/rooms/{rooms_id}/seats/{seat_id}
 ```

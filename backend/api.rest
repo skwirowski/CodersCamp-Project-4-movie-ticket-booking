@@ -1,3 +1,6 @@
+####
+#### MOVIES
+####
 # Show all movies
 GET http://localhost:3000/api/movies/
 
@@ -47,9 +50,6 @@ GET http://localhost:3000/api/rooms/
 # Show room - add correct id
 ### 
 GET http://localhost:3000/api/rooms/5e060aac06b7a9197496115a/
-
-# Add room with seats
-###
 
 # Add room
 ###
