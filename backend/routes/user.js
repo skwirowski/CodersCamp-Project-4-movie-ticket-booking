@@ -53,4 +53,9 @@ router.put('/:id', auth, async (req, res) => {
   res.send(user);
 });
 
+router.delete('/:id', auth, async (req, res) => {
+  const user = await User.findByIdAndRemove(req.user._id).select('-password');
+  res.send(user);
+});
+
 module.exports = router;

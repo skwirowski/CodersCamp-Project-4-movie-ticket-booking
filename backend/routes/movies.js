@@ -67,7 +67,7 @@ router.put('/:id', async (req, res) => {
     director,
     image,
   } = req.body
-  const task = await Movies.findByIdAndUpdate(
+  const movie = await Movies.findByIdAndUpdate(
     req.params.id,
     {
       title: title,
@@ -81,10 +81,10 @@ router.put('/:id', async (req, res) => {
     { new: true }
   )
 
-  if (!task)
+  if (!movie)
     return res.status(404).send('The movie with the given ID was not found.')
 
-  res.send(task)
+  res.send(movie)
 })
 
 module.exports = router

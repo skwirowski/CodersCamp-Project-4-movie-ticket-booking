@@ -158,3 +158,39 @@ http://localhost:3000/api/rooms/{rooms_id}/seats/{seat_id}
 ```
 http://localhost:3000/api/rooms/{rooms_id}/seats/{seat_id}
 ```
+### Users
+
+1. GET
+```
+http://localhost:3000/api/users
+```
+
+2. POST
+```
+http://localhost:3000/api/users
+
+{
+	"name": STRING, REQUIRED
+	"lastname": STRING, REQUIRED
+	"email": STRING, REQUIRED, UNIQUE
+	"password": STRING, REQUIRED
+}
+```
+
+3. PUT
+
+```
+http://localhost:3000/api/users
+
+{
+	"name": STRING, REQUIRED
+	"lastname": STRING, REQUIRED
+	"email": STRING, REQUIRED, UNIQUE
+	"password": STRING, REQUIRED
+}
+```
+4. DELETE
+
+```
+http://localhost:3000/api/users/{user_id}
+```
