@@ -1,0 +1,40 @@
+# Show all movies
+GET http://localhost:3000/api/movies/
+
+# Show movie - add correct id
+### 
+GET http://localhost:3000/api/movies/5e03cb37a11aac253cfe0914
+
+# Add movie
+###
+POST http://localhost:3000/api/movies/
+Content-Type: application/json
+
+{
+	"title": "New Film",
+	"desc": "Lorem iosum dolir sit amet...",
+	"category": ["Drama", "Historical"],
+	"duration": "170",
+	"premiere": "2019.12.24",
+	"director": ["John Doe"],
+    "image": "https://loremflickr.com/g/320/240/"
+}
+
+# Edit movie - add correct id
+###
+PUT http://localhost:3000/api/movies/5e03cb37a11aac253cfe0914
+Content-Type: application/json
+
+{
+	"title": "New Film 2",
+	"desc": "Lorem iosum dolir sit amet...",
+	"category": ["Drama", "Historical"],
+	"duration": "170",
+	"premiere": "2019.12.24",
+	"director": ["John Doe"],
+    "image": "https://loremflickr.com/g/320/240/"
+}
+
+# Remove movie - add correct id
+###
+DELETE http://localhost:3000/api/movies/5df3d1254650e9159014129a
