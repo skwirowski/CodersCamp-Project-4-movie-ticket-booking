@@ -17,28 +17,32 @@ const MovieDetails = (props) => {
                     src={props.image} />
                 </div>
                 <div className="col-8">
-                        <div className="movie-details-title">
-                            <span>{props.title}</span>
-                            <span className="vote"><i className="fas fa-star"></i> {props.vote}</span>
-                            <br />
-                            <span className="vote">Average rating</span>
-                        </div>
-                        <div>
-                            <span className="text">Relase Date:  </span>
-                            <div> {props.releaseDate}</div>
-                        </div>
-                        <div>
-                            <span className="text">Description: </span>
-                            <div className="description">{props.content}</div>
-                        </div>
-                        <iframe className="trailer"
-                            src={`https://www.youtube.com/embed/${props.trailers}?rel=0&amp;showinfo=0`}
-                            frameBorder="0"
-                            title={props.title}>
-                        </iframe>
+                    <div className="movie-details-title">
+                        <span>{props.title}</span>
+                        <span className="vote"><i className="fas fa-star"></i> {props.vote}</span>
+                        <br />
+                        <span className="vote">Average rating</span>
+                    </div>
                     <div>
-                        <Link to={dateSelection(id)}><button className="btn">BOOK</button></Link>
-                        <Link to={homepage}><button className="btn">GO BACK</button></Link>
+                        <span className="text">Relase Date:  </span>
+                        <div> {props.releaseDate}</div>
+                    </div>
+                    <div>
+                        <span className="text">Description: </span>
+                        <div className="description">{props.content}</div>
+                    </div>
+                    <div className="row">
+                        <div className="col">
+                            <iframe className="trailer"
+                                src={`https://www.youtube.com/embed/${props.trailers}?rel=0&amp;showinfo=0`}
+                                frameBorder="0"
+                                title={props.title}>
+                            </iframe> 
+                        </div>
+                        <div className="col d-flex flex-column justify-content-center align-items-center">
+                            <Link to={dateSelection(id)}><button className="btn">BOOK</button></Link>
+                            <Link to={homepage}><button className="btn">GO BACK</button></Link>
+                        </div>
                     </div>
                 </div>
             </div>
