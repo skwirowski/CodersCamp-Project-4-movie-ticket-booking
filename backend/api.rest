@@ -1,0 +1,205 @@
+####
+#### MOVIES
+####
+# Show all movies
+GET http://localhost:3000/api/movies/
+
+# Show movie - add correct id
+### 
+GET http://localhost:3000/api/movies/5e03cb37a11aac253cfe0914
+
+# Add movie
+###
+POST http://localhost:3000/api/movies/
+Content-Type: application/json
+
+{
+	"title": "New Film",
+	"desc": "Lorem iosum dolir sit amet...",
+	"category": ["Drama", "Historical"],
+	"duration": "170",
+	"premiere": "2019.12.24",
+	"director": ["John Doe"],
+    "image": "https://loremflickr.com/g/320/240/"
+}
+
+# Edit movie - add correct id
+###
+PUT http://localhost:3000/api/movies/5e03cb37a11aac253cfe0914
+Content-Type: application/json
+
+{
+	"title": "New Film 2",
+	"desc": "Lorem iosum dolir sit amet...",
+	"category": ["Drama", "Historical"],
+	"duration": "170",
+	"premiere": "2019.12.24",
+	"director": ["John Doe"],
+    "image": "https://loremflickr.com/g/320/240/"
+}
+
+# Remove movie - add correct id
+###
+DELETE http://localhost:3000/api/movies/5df3d1254650e9159014129a
+####
+#### ROOMS
+####
+# Show all rooms
+GET http://localhost:3000/api/rooms/
+
+# Show room - add correct id
+### 
+GET http://localhost:3000/api/rooms/5e060aac06b7a9197496115a/
+
+# Add room
+###
+POST http://localhost:3000/api/rooms/
+Content-Type: application/json
+
+{
+	"name": "R102",
+	"desc": "Lorem iosum dolir sit amet...",
+	"seatsAvailable": "80"
+}
+
+# Edit room - add correct id
+###
+PUT http://localhost:3000/api/rooms/5e064a734310614b10f9743d
+Content-Type: application/json
+
+{
+	"name": "R102",
+	"desc": "Lorem iosum dolir sit amet...",
+	"seatsAvailable": "80"
+}
+
+# Remove room - add correct id
+###
+DELETE http://localhost:3000/api/rooms/5e064a734310614b10f9743d
+
+###
+### SEATS
+###
+# Show seats in room - add correct id
+### 
+GET http://localhost:3000/api/rooms/5e064aaa4310614b10f9743e/seats
+
+# Add seats to room - add correct id
+###
+POST http://localhost:3000/api/rooms/5e064aaa4310614b10f9743e/seats
+Content-Type: application/json
+
+{
+	"num": "36",
+	"row": "ZD",
+	"checked": "false"
+}
+
+# Edit seats - add correct id
+###
+PUT http://localhost:3000/api/rooms/5e064aaa4310614b10f9743e/seats/5e064abd4310614b10f9743f
+Content-Type: application/json
+
+{
+	"num": "12",
+	"row": "CD",
+	"checked": "false"
+}
+
+# Remove seat - add correct id
+###
+DELETE http://localhost:3000/api/rooms/5e064aaa4310614b10f9743e/seats/5e064abd4310614b10f9743f
+
+###
+### Users
+###
+# Show users
+### 
+GET http://localhost:3000/api/users
+
+# Add user
+###
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+	"name": "John",
+	"lastname": "Doe",
+	"email": "john@doe.com",
+	"password": "qwerty123"
+}
+
+# Edit user - add correct id
+###
+PUT http://localhost:3000/api/users/5e07958cc50bc52204749bba
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTA3OGEzNDExMGYzYTRlNzgyMzJmMjUiLCJpYXQiOjE1Nzc1NTMwMjV9.hOqZKGHT_hul5l_ipZkSnHrVxit0u55mUHykraQhtv8
+
+{
+	"name": "John",
+	"lastname": "Do",
+	"email": "john@doe.com",
+	"password": "qwerty123"
+}
+
+# Remove user - add correct id
+###
+DELETE http://localhost:3000/api/users/5e07958cc50bc52204749bba
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTA3OGEzNDExMGYzYTRlNzgyMzJmMjUiLCJpYXQiOjE1Nzc1NTMwMjV9.hOqZKGHT_hul5l_ipZkSnHrVxit0u55mUHykraQhtv8
+
+###
+### LOGIN
+###
+
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+	"email":"john@doe.com",
+	"password": "qwerty123"
+}
+
+###
+### Movie screenings
+###
+# Display all movie screenings
+GET http://localhost:3000/api/screenings
+
+# Display movie screenings by name 
+###
+GET http://localhost:3000/api/screenings?shows=New Film 4
+
+# Display movie screenings by room 
+###
+GET http://localhost:3000/api/screenings?room=Room 2
+
+# Display movie screenings by date 
+###
+GET http://localhost:3000/api/screenings?day=2019-12-27
+
+# Display movie screenings by date and name
+###
+GET http://localhost:3000/api/screenings?day=2019-12-25&shows=New Film 4
+###
+POST http://localhost:3000/api/screenings
+Content-Type: application/json
+
+{
+	"movie":"5e05d9a0c265cb54ccf895b7",
+	"room":"5e060adb06b7a9197496115c",
+	"dateTime":"2019-12-25T12:00"
+}
+
+###
+PUT http://localhost:3000/api/screenings/5e07ece9490d6a68f0467b03
+Content-Type: application/json
+
+{
+	"movie":"5e051bc70944cf1fa0c8318e",
+	"room":"5e06457893fbcd5f3c957e9e",
+	"dateTime":"2019-12-27T15:00"
+}
+
+###
+DELETE http://localhost:3000/api/screenings/5e07f0d3e8a99e667816141a
