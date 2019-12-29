@@ -23,7 +23,7 @@ const ticketSchema = new mongoose.Schema({
       maxlength: 255,
     },
     showTime: {
-      type: Number,
+      type: Date,
       required: true,
     },
     seat: {
@@ -69,7 +69,7 @@ function validate(ticket) {
         .min(1)
         .max(255)
         .required(),
-      showTime: Joi.number()
+      showTime: Joi.date()
         .required(),
       seat: Joi.string()
         .min(2)

@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const { Ticket, validate } = require('../models/ticket-reservation')
+//const { Shows } = require('../models/shows')
 
 router.get('/', async (req, res) => {
   const tickets = await Ticket.find()
@@ -27,6 +28,7 @@ router.post('/', async (req, res) => {
     seat,
     price,
     ticketType,
+    room,
   } = req.body
 
   let ticket = new Ticket({
@@ -37,6 +39,7 @@ router.post('/', async (req, res) => {
     seat: seat,
     price: price,
     ticketType: ticketType,
+    room: room,
   })
 
   ticket = await ticket.save()
@@ -63,6 +66,7 @@ router.put('/:id', async (req, res) => {
     seat,
     price,
     ticketType,
+    room,
   } = req.body
   const ticket = await Ticket.findByIdAndUpdate(
     req.params.id,
@@ -74,6 +78,7 @@ router.put('/:id', async (req, res) => {
       seat: seat,
       price: price,
       ticketType: ticketType,
+      room: room,
     },
     { new: true }
   )
