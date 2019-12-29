@@ -26,10 +26,16 @@ const ticketSchema = new mongoose.Schema({
       type: Date,
       required: true,
     },
+    room: {
+      type: String,
+      required: true,
+      minlength: 2,
+      maxlength: 50
+    },
     seat: {
         type: String,
         minlength: 2,
-        maxlength: 3,
+        maxlength: 4,
         required: true,
         unique: true,
     },
@@ -74,6 +80,10 @@ function validate(ticket) {
       seat: Joi.string()
         .min(2)
         .max(4)
+        .required(),
+      room: Joi.string()
+        .min(2)
+        .max(50)
         .required(),
       price: Joi.number()
         .required(),
