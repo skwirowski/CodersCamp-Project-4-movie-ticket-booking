@@ -159,3 +159,47 @@ Content-Type: application/json
 	"email":"john@doe.com",
 	"password": "qwerty123"
 }
+
+###
+### Movie screenings
+###
+# Display all movie screenings
+GET http://localhost:3000/api/screenings
+
+# Display movie screenings by name 
+###
+GET http://localhost:3000/api/screenings?shows=New Film 4
+
+# Display movie screenings by room 
+###
+GET http://localhost:3000/api/screenings?room=Room 2
+
+# Display movie screenings by date 
+###
+GET http://localhost:3000/api/screenings?day=2019-12-27
+
+# Display movie screenings by date and name
+###
+GET http://localhost:3000/api/screenings?day=2019-12-25&shows=New Film 4
+###
+POST http://localhost:3000/api/screenings
+Content-Type: application/json
+
+{
+	"movie":"5e05d9a0c265cb54ccf895b7",
+	"room":"5e060adb06b7a9197496115c",
+	"dateTime":"2019-12-25T12:00"
+}
+
+###
+PUT http://localhost:3000/api/screenings/5e07ece9490d6a68f0467b03
+Content-Type: application/json
+
+{
+	"movie":"5e051bc70944cf1fa0c8318e",
+	"room":"5e06457893fbcd5f3c957e9e",
+	"dateTime":"2019-12-27T15:00"
+}
+
+###
+DELETE http://localhost:3000/api/screenings/5e07f0d3e8a99e667816141a
