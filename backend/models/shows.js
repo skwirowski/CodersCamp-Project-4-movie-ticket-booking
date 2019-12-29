@@ -28,10 +28,10 @@ const seatsSchema = new mongoose.Schema({
   },
 })
 
-const Rooms = mongoose.model(
-  'Rooms',
+const Shows = mongoose.model(
+  'Shows',
   new mongoose.Schema({
-    name: {
+    title: {
       type: String,
       required: true,
       minlength: 3,
@@ -39,6 +39,40 @@ const Rooms = mongoose.model(
       trim: true,
     },
     desc: {
+      type: String,
+      required: true,
+      minlength: 3,
+      maxlenght: 255,
+      trim: true,
+    },
+    category: {
+      type: Array,
+      required: true,
+    },
+    duration: {
+      type: Number,
+      required: true,
+      min: 1,
+    },
+    premiere: {
+      type: Date,
+      required: true,
+    },
+    director: {
+      type: Array,
+      required: true,
+    },
+    image: {
+      type: String,
+    },
+    roomName: {
+      type: String,
+      required: true,
+      minlength: 3,
+      maxlenght: 255,
+      trim: true,
+    },
+    roomDesc: {
       type: String,
       required: true,
       minlength: 3,
@@ -53,40 +87,19 @@ const Rooms = mongoose.model(
     seats: {
       type: [seatsSchema],
     },
+    dateTime: {
+      type: Date,
+      required: true,
+    },
   })
 )
 
-const validationRoom = room => {
+const validationShow = show => {
   const schema = {
-    name: Joi.string()
-      .min(3)
-      .max(255)
-      .required(),
-    desc: Joi.string()
-      .min(3)
-      .max(255)
-      .required(),
-    seatsAvailable: Joi.number().required(),
-    seats: Joi.array(),
+    dateTime: Joi.date().required(),
   }
-  return Joi.validate(room, schema)
+  return Joi.validate(show, schema)
 }
 
-const validationSeat = seat => {
-  const schema = {
-    num: Joi.number().required(),
-    row: Joi.string()
-      .min(1)
-      .max(2)
-      .required(),
-    code: Joi.string()
-      .min(2)
-      .max(3),
-    checked: Joi.boolean().required(),
-  }
-  return Joi.validate(seat, schema)
-}
-
-exports.Rooms = Rooms
-exports.validationRoom = validationRoom
-exports.validationSeat = validationSeat
+exports.Shows = Shows
+exports.validation = validationShow

@@ -13,6 +13,7 @@
 - [Seats](#seats)
 - [Users](#users)
 - [Login](#login)
+- [Movie Screenings](#movie-screenings)
 
 ---
 
@@ -213,7 +214,7 @@ http://localhost:3000/api/users
 3. PUT
 
 ```
-http://localhost:3000/api/users
+http://localhost:3000/api/users/{user_id}
 
 {
 	"name": STRING, REQUIRED
@@ -244,4 +245,63 @@ http://localhost:3000/api/login
 	"email": STRING, REQUIRED
 	"password": STRING, REQUIRED
 }
+```
+
+---
+
+### MOVIE SCREENINGS
+
+---
+
+1. GET
+
+```
+All movie shows
+http://localhost:3000/api/screenings
+
+Movie shows by movie Title
+http://localhost:3000/api/screenings?shows={Film Title}
+EG: http://localhost:3000/api/screenings?shows=New Film 4
+
+Movie shows by date
+http://localhost:3000/api/screenings?day={YYYY-MM-DD}
+EG: http://localhost:3000/api/screenings?day=2019-12-27
+
+Movie shows by room
+http://localhost:3000/api/screenings?room={Room Name}
+EG: http://localhost:3000/api/screenings?room=Room 2
+
+Movie shows by date and name
+http://localhost:3000/api/screenings?day={YYYY-MM-DD}&shows={Film Title}
+EG: http://localhost:3000/api/screenings?day=2019-12-25&shows=New Film 4
+```
+
+2. POST
+
+```
+http://localhost:3000/api/screenings
+
+{
+	"movie": STRING, REQUIRED, MOVIE ID
+	"room": STRING, REQUIRED, ROOM ID
+	"dateTime": DATE, REQUIRED, FORMAT: "YYYY=MM-DDTHH:MM" EG. "2019-12-27T15:00"
+}
+```
+
+3. PUT
+
+```
+http://localhost:3000/api/screenings/{show_id}
+
+{
+	"movie": STRING, REQUIRED, MOVIE ID
+	"room": STRING, REQUIRED, ROOM ID
+	"dateTime": DATE, REQUIRED, FORMAT: "YYYY-MM-DDTHH:MM" EG. "2019-12-27T15:00"
+}
+```
+
+4. DELETE
+
+```
+http://localhost:3000/api/screenings/{show_id}
 ```
