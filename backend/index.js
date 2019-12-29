@@ -2,16 +2,12 @@ const mongoose = require('mongoose')
 const express = require('express')
 const movies = require('./routes/movies')
 const rooms = require('./routes/rooms')
-<<<<<<< HEAD
 const user = require('./routes/user')
 const login = require('./routes/login')
 const shows = require('./routes/shows')
-=======
-const user = require("./routes/user")
-const login = require("./routes/login")
+const ticket = require("./routes/ticket-reservation")
 //const config = require('config');
 
->>>>>>> Minor improvements
 
 const app = express()
 
@@ -34,3 +30,4 @@ app.use('/api/rooms', rooms)
 app.use('/api/users', user)
 app.use('/api/login', login)
 app.use('/api/screenings', shows)
+app.use("/api/ticket", ticket)

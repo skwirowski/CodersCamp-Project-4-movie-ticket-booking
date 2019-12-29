@@ -1,14 +1,14 @@
 const express = require('express')
 const router = express.Router()
-const { Tickets, validation } = require('../models/ticket-reservation')
+const { Ticket, validate } = require('../models/ticket-reservation')
 
 router.get('/', async (req, res) => {
-  const tickets = await Tickets.find()
+  const tickets = await Ticket.find()
   res.send(tickets)
 })
 
 router.get('/:id', async (req, res) => {
-  const ticket = await Tickets.findById(req.params.id)
+  const ticket = await Ticket.findById(req.params.id)
 
   if (!ticket)
     return res.status(400).send('The Ticket with given ID was not found.')
@@ -16,7 +16,7 @@ router.get('/:id', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  const { error } = validation(req.body)
+  const { error } = validate(req.body)
   if (error) return res.status(404).send(error.details[0].message)
 
   const {
@@ -29,7 +29,7 @@ router.post('/', async (req, res) => {
     ticketType,
   } = req.body
 
-  let ticket = new Tickets({
+  let ticket = new Ticket({
     name: name,
     lastname: lastname,
     movie: movie,
@@ -44,7 +44,7 @@ router.post('/', async (req, res) => {
 })
 
 router.delete('/:id', async (req, res) => {
-  const ticket = await Tickets.findByIdAndRemove(req.params.id)
+  const ticket = await Ticket.findByIdAndRemove(req.params.id)
 
   if (!ticket)
     return res.status(404).send('The Ticket with given ID was not found.')
@@ -52,7 +52,7 @@ router.delete('/:id', async (req, res) => {
 })
 
 router.put('/:id', async (req, res) => {
-  const { error } = validation(req.body)
+  const { error } = validate(req.body)
   if (error) return res.status(400).send(error.details[0].message)
 
   const {
@@ -64,7 +64,7 @@ router.put('/:id', async (req, res) => {
     price,
     ticketType,
   } = req.body
-  const ticket = await Tickets.findByIdAndUpdate(
+  const ticket = await Ticket.findByIdAndUpdate(
     req.params.id,
     {
       name: name,

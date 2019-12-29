@@ -34,7 +34,7 @@ const ticketSchema = new mongoose.Schema({
         unique: true,
     },
     price: {
-        type: mongoose.Types.Decimal128,
+        type: Number,
         minlength: 1,
         maxlength: 6,
         required: true,
@@ -55,7 +55,7 @@ ticketSchema.methods.generateAuthToken = function () {
 
 const Ticket = mongoose.model('Ticket', ticketSchema);
 
-function validateTicket(ticket) {
+function validate(ticket) {
     const schema = {
       name: Joi.string()
         .min(2)
@@ -69,16 +69,13 @@ function validateTicket(ticket) {
         .min(1)
         .max(255)
         .required(),
-      showTime: Joi.string()
+      showTime: Joi.number()
         .required(),
       seat: Joi.string()
         .min(2)
-        .max(3)
-        .required()
-        .unique(),
-      price: Joi.mongoose.Types.Decimal128()
-        .min(1)
-        .max(6)
+        .max(4)
+        .required(),
+      price: Joi.number()
         .required(),
       ticketType: Joi.string()
         .required()
@@ -89,4 +86,4 @@ function validateTicket(ticket) {
     return Joi.validate(ticket, schema);
   }
   exports.Ticket = Ticket;
-  exports.validate = validateTicket;
+  exports.validate = validate;
