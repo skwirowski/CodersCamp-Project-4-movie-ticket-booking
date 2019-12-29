@@ -6,9 +6,9 @@ const MovieItem = ({ movie }) => {
 
   return (
     <div className="movie-item">
-      <img 
-        className="img-thumbnail mx-auto d-block img-fluid" 
-        alt={movie.release_date}  
+      <img
+        className="img-thumbnail mx-auto d-block img-fluid"
+        alt={movie.release_date}
         src={`${posterUrl}${movie.poster_path}`}
       />
       <button className="btn">MORE</button>
