@@ -1,0 +1,5 @@
+{"_id":{"$oid":"5e074beca7ff8100880f0b1e"},"name":"Jan","lastname":"Kowalski","email":"jk@mail.com","password":"$2a$10$q3yCSVgbE/c4LTYuyt3MguA7r/juWQSnKVzZ3z8DuzTVi6K281bZW","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e074df552da241914860767"},"name":"Adam","lastname":"Klonowiec","email":"klonowiec.adam@email.com","password":"$2a$10$xiDJs5gOchzYioFKEoj0Uu6HkP0zt2KdKaPHcXXavbBH.uMcAVs/.","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e0776fb3e2b4b1264bdd7ae"},"name":"Paweł","lastname":"Jędraszko","email":"jp87@email.com","password":"$2a$10$7DuJyDLxFWGWOtwG.fx2GOKBtoXUQKkYyDBqzKMgozy90KEtKa1ai","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e0a097386112e1c3089259a"},"name":"Jędrzej","lastname":"Andrzejczak","email":"ja2007@email.com","password":"$2a$10$whGoFu1n.HoVIz5gbEos..TxNelNLdkkc7mz2qQVPPII2zbctgUbq","__v":{"$numberInt":"0"}}
+{"_id":{"$oid":"5e0a09c986112e1c3089259b"},"name":"Danuta","lastname":"Telesińska","email":"danka935@email.com","password":"$2a$10$oA7jEhUpfYCdWeTZUQp8..kMADxLOaHC5LbCqB94ZBmFoBcyOPF1i","__v":{"$numberInt":"0"}}

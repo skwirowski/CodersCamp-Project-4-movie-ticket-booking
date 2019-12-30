@@ -25,9 +25,10 @@
 
 1. Run `MongoDB Compass`.
 2. Run `Postman` or any other app.
-3. Select the type of request (`POST, PUT, GET, DELETE`).
-4. Add body to `POST/PUT` request.
-5. Add headers
+3. Go to the `db` folder and run`db.bat`, which will create sample collections. (works only Windows)
+4. Select the type of request (`POST, PUT, GET, DELETE`).
+5. Add body to `POST/PUT` request.
+6. Add headers
 
 ```
 "Content-Type": "application/json"
@@ -305,6 +306,7 @@ http://localhost:3000/api/screenings/{show_id}
 ```
 http://localhost:3000/api/screenings/{show_id}
 ```
+
 ---
 
 ### Tickets
@@ -338,7 +340,6 @@ http://localhost:3000/api/ticket
 ```
 
 3. PUT
-
 
 ```
 http://localhost:3000/api/ticket/{ticket_id}
