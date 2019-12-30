@@ -5,6 +5,9 @@ const rooms = require('./routes/rooms')
 const user = require('./routes/user')
 const login = require('./routes/login')
 const shows = require('./routes/shows')
+const ticket = require("./routes/ticket-reservation")
+//const config = require('config');
+
 
 const app = express()
 
@@ -27,3 +30,4 @@ app.use('/api/rooms', rooms)
 app.use('/api/users', user)
 app.use('/api/login', login)
 app.use('/api/screenings', shows)
+app.use("/api/ticket", ticket)

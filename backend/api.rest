@@ -14,13 +14,13 @@ POST http://localhost:3000/api/movies/
 Content-Type: application/json
 
 {
-	"title": "New Film",
+	"title": "Nice Movie 2",
 	"desc": "Lorem iosum dolir sit amet...",
-	"category": ["Drama", "Historical"],
-	"duration": "170",
-	"premiere": "2019.12.24",
-	"director": ["John Doe"],
-    "image": "https://loremflickr.com/g/320/240/"
+	"category": ["Thriller"],
+	"duration": "140",
+	"premiere": "2019.11.24",
+	"director": ["John Dough"],
+    "image": "https://loremflickr.com/g/340/240/"
 }
 
 # Edit movie - add correct id
@@ -57,7 +57,7 @@ POST http://localhost:3000/api/rooms/
 Content-Type: application/json
 
 {
-	"name": "R102",
+	"name": "R103",
 	"desc": "Lorem iosum dolir sit amet...",
 	"seatsAvailable": "80"
 }
