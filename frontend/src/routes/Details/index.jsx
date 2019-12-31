@@ -31,7 +31,7 @@ const Details = () => {
         }
       })
     return () => controller.abort();
-  }, []);
+  }, [id]);
 
   console.log(movies);
 

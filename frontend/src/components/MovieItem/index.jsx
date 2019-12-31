@@ -1,9 +1,8 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import 'css/Homepage.css';
+import { posterUrl } from 'static/moviesAPI';
 
 const MovieItem = ({ movie }) => {
-  const posterUrl = 'https://image.tmdb.org/t/p/w500';
-
   return (
     <div className="movie-item">
       <img
@@ -11,12 +10,16 @@ const MovieItem = ({ movie }) => {
         alt={movie.release_date}
         src={`${posterUrl}${movie.poster_path}`}
       />
-      <button className="btn">MORE</button>
+      <button type="submit" className="btn">
+        MORE
+      </button>
       <div className="segment">
-        <div className="movie-title"><span>{movie.title}</span></div>
+        <div className="movie-title">
+          <span>{movie.title}</span>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default MovieItem;

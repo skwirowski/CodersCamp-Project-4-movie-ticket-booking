@@ -5,5 +5,3 @@ export const endpointGetGenres = `https://api.themoviedb.org/3/genre/movie/list?
 export const posterUrl = 'https://image.tmdb.org/t/p/w500';
 
 export default `${apiUrl}${endpoint}?api_key=${apiKey}`;
-
-

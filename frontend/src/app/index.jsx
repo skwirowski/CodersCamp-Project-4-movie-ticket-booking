@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
-import 'css/App.css';
+import 'app/style.css';
 import routes from 'static/routes';
 import moviesThunk from 'redux/thunk/moviesThunk';
 import Homepage from 'routes/Homepage';
