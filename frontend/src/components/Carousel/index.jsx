@@ -39,7 +39,7 @@ const Carousel = ({ movies, genres }) => {
       {/* <!-- The slideshow --> */}
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src={bg} alt="background"/>
+          <img src={bg} alt="background" />
         </div>
         {renderedMovies}
       </div>
