@@ -25,29 +25,44 @@ const Carousel = ({ movies, genres }) => {
     <li
       data-target="#slider"
       data-slide-to={movies.indexOf(movie) + 1}
-      key={movie.id}
+      key={movies.indexOf(movie) + 1}
     />
   ));
   return (
-    <div id="slider" className="carousel slide" data-ride="carousel">
+    <div
+      id="slider"
+      className="carousel slide"
+      data-ride="carousel"
+      data-interval="3000"
+    >
       {/* <!-- Indicators --> */}
-      <ul className="carousel-indicators">
+      <ol className="carousel-indicators">
         <li data-target="#slider" data-slide-to="0" className="active" />
         {indicators}
-      </ul>
+      </ol>
 
       {/* <!-- The slideshow --> */}
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src={bg} alt="background"/>
+          <img src={bg} alt="background" />
         </div>
         {renderedMovies}
       </div>
       {/* <!-- Left and right controls --> */}
-      <a className="carousel-control-prev" href="#slider" data-slide="prev">
+      <a
+        className="carousel-control-prev"
+        href="#slider"
+        data-slide="prev"
+        role="button"
+      >
         <span className="carousel-control-prev-icon" />
       </a>
-      <a className="carousel-control-next" href="#slider" data-slide="next">
+      <a
+        className="carousel-control-next"
+        href="#slider"
+        data-slide="next"
+        role="button"
+      >
         <span className="carousel-control-next-icon" />
       </a>
     </div>

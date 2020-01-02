@@ -17,15 +17,15 @@ const CarouselItem = ({ movie, movieGenres }) => {
   const { details, dateSelection } = routes;
 
   return (
-    <div className="carousel-item row">
-      <div className="content text-uppercase col-4">
+    <div className="carousel-item text-uppercase">
+      <div className="content">
         <Link to={details(movie.id)}>
           <h2>{movie.title}</h2>
         </Link>
         <div className="genres">{renderedList}</div>
       </div>
       <img
-        className="img-fluid col-4"
+        className="img-fluid"
         alt={movie.title}
         src={`${posterUrl}${movie.poster_path}`}
       />
