@@ -9,7 +9,7 @@ const CarouselItemGenre = ({ genre }) => <div className="genre">{genre}</div>;
 
 const CarouselItem = ({ movie, movieGenres }) => {
   const renderedList = movieGenres.map(genre => (
-    <div key={movieGenres.indexOf(genre)}>
+    <div key={movieGenres.indexOf(genre) + 1}>
       <CarouselItemGenre genre={genre} />
     </div>
   ));
@@ -17,7 +17,7 @@ const CarouselItem = ({ movie, movieGenres }) => {
   const { details, dateSelection } = routes;
 
   return (
-    <div className="carousel-item row" >
+    <div className="carousel-item row">
       <div className="content text-uppercase col-4">
         <Link to={details(movie.id)}>
           <h2>{movie.title}</h2>
