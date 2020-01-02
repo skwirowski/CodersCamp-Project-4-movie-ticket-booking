@@ -9,7 +9,7 @@ const CarouselItemGenre = ({ genre }) => <div className="genre">{genre}</div>;
 
 const CarouselItem = ({ movie, movieGenres }) => {
   const renderedList = movieGenres.map(genre => (
-    <div key={movieGenres.indexOf(genre)+1}>
+    <div key={movieGenres.indexOf(genre) + 1}>
       <CarouselItemGenre genre={genre} />
     </div>
   ));
