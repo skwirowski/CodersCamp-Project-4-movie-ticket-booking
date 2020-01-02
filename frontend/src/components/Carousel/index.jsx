@@ -5,19 +5,74 @@ import CarouselItem from 'components/CarouselItem';
 import bg from 'static/img/bg.jpg';
 import 'components/Carousel/style.css';
 
-const Carousel = ({ movies, genres }) => {
-  const renderedGenres = genres.map(genre => genre);
+// const Carousel = ({ movies, genres }) => {
+//   const renderedGenres = genres.map(genre => genre);
+//   const renderedMovies = movies.map(movie => {
+//     const movieGenres = [];
+//     for (const i of movie.genre_ids) {
+//       for (const j of renderedGenres) {
+//         if (i === j.id) {
+//           movieGenres.push(j.name);
+//         }
+//       }
+//     }
+//     return (
+//       <CarouselItem movie={movie} movieGenres={movieGenres} key={movie.id} />
+//     );
+//   });
+//   // eslint-disable-next-line react/prop-types
+//   const indicators = movies.map(movie => (
+//     <li
+//       data-target="#slider"
+//       data-slide-to={movies.indexOf(movie) + 1}
+//       key={movies.indexOf(movie) + 1}
+//     />
+//   ));
+//   return (
+//     <div
+//       id="slider"
+//       className="carousel slide"
+//       data-ride="carousel"
+//       data-interval="3000"
+//     >
+//       {/* <!-- Indicators --> */}
+//       <ol className="carousel-indicators">
+//         <li data-target="#slider" data-slide-to="0" className="active" />
+//         {indicators}
+//       </ol>
+
+//       {/* <!-- The slideshow --> */}
+//       <div className="carousel-inner">
+//         <div className="carousel-item active">
+//           <img src={bg} alt="background" />
+//         </div>
+//         {renderedMovies}
+//       </div>
+//       {/* <!-- Left and right controls --> */}
+//       <a
+//         className="carousel-control-prev"
+//         href="#slider"
+//         data-slide="prev"
+//         role="button"
+//       >
+//         <span className="carousel-control-prev-icon" />
+//       </a>
+//       <a
+//         className="carousel-control-next"
+//         href="#slider"
+//         data-slide="next"
+//         role="button"
+//       >
+//         <span className="carousel-control-next-icon" />
+//       </a>
+//     </div>
+//   );
+// };
+const Carousel = ({ movies }) => {
   const renderedMovies = movies.map(movie => {
-    const movieGenres = [];
-    for (const i of movie.genre_ids) {
-      for (const j of renderedGenres) {
-        if (i === j.id) {
-          movieGenres.push(j.name);
-        }
-      }
-    }
     return (
-      <CarouselItem movie={movie} movieGenres={movieGenres} key={movie.id} />
+      // eslint-disable-next-line no-underscore-dangle
+      <CarouselItem movie={movie} genres={movie.category} key={movie._id} />
     );
   });
   // eslint-disable-next-line react/prop-types
@@ -25,16 +80,21 @@ const Carousel = ({ movies, genres }) => {
     <li
       data-target="#slider"
       data-slide-to={movies.indexOf(movie) + 1}
-      key={movie.id}
+      key={movies.indexOf(movie) + 1}
     />
   ));
   return (
-    <div id="slider" className="carousel slide" data-ride="carousel">
+    <div
+      id="slider"
+      className="carousel slide"
+      data-ride="carousel"
+      data-interval="3000"
+    >
       {/* <!-- Indicators --> */}
-      <ul className="carousel-indicators">
+      <ol className="carousel-indicators">
         <li data-target="#slider" data-slide-to="0" className="active" />
         {indicators}
-      </ul>
+      </ol>
 
       {/* <!-- The slideshow --> */}
       <div className="carousel-inner">
@@ -44,14 +104,23 @@ const Carousel = ({ movies, genres }) => {
         {renderedMovies}
       </div>
       {/* <!-- Left and right controls --> */}
-      <a className="carousel-control-prev" href="#slider" data-slide="prev">
+      <a
+        className="carousel-control-prev"
+        href="#slider"
+        data-slide="prev"
+        role="button"
+      >
         <span className="carousel-control-prev-icon" />
       </a>
-      <a className="carousel-control-next" href="#slider" data-slide="next">
+      <a
+        className="carousel-control-next"
+        href="#slider"
+        data-slide="next"
+        role="button"
+      >
         <span className="carousel-control-next-icon" />
       </a>
     </div>
   );
 };
-
 export default Carousel;

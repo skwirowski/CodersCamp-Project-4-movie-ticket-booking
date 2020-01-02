@@ -7,8 +7,8 @@ const MovieItem = ({ movie }) => {
     <div className="movie-item">
       <img
         className="img-thumbnail mx-auto d-block img-fluid"
-        alt={movie.release_date}
-        src={`${posterUrl}${movie.poster_path}`}
+        alt={movie.premiere}
+        src={movie.image}
       />
       <button type="submit" className="btn">
         MORE

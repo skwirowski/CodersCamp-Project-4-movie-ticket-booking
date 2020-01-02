@@ -8,7 +8,8 @@ const MovieList = ({ movies }) => {
   const { details } = routes;
 
   const renderedList = movies.map(movie => (
-    <div className="column col-xl-3 col-4" key={movie.id}>
+    // eslint-disable-next-line no-underscore-dangle
+    <div className="column col-xl-3 col-4" key={movie._id}>
       <Link to={details(movie.id)}>
         <MovieItem movie={movie} />
       </Link>
