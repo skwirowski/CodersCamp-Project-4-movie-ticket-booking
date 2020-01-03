@@ -20,7 +20,6 @@ const DateSelectionPicker = props => {
   const getDayName = buffer => {
     const date = new Date();
     const day = date.getDay();
-    console.log("ppizda",  buffer)
     if(day + buffer < 7 ){
       return daysOfTheWeek[day + buffer];
     } else {
