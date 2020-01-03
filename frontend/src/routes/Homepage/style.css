@@ -40,13 +40,18 @@
 
 .movie-item img {
   position:relative;
+  /* display: flex; */
 }
 
 .movie-item .btn {
   position: absolute;
+  max-width: 60%;
   z-index: 10;
-  top: 25%;
-  right: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top:25%;
 	box-shadow: 0px 0px 1px 1px #d30913;
 	background-color: transparent;
 	border-radius: 5px;
@@ -58,7 +63,6 @@
 	font-size:1.2rem;
 	padding:15px 30px;
 	text-decoration:none;
-  text-shadow:0px 1px 0px #d30913;
   display: none;
 }
 
@@ -67,10 +71,10 @@
   color: white;
 }
 
-.movie-item .btn:active {
+/* .movie-item .btn:active {
 	position:relative;
   top:1px;
-}
+} */
 
 .movie-item:hover img {
   opacity: 0.5;
@@ -80,5 +84,11 @@
 
 .movie-item:hover .btn {
   display: block;
+}
+
+@media screen and (max-width: 1000px) {
+  .movie-item .btn {
+    font-size: 0.9rem;
+  }
 }
 

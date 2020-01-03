@@ -25,19 +25,16 @@
 
 1. Run `MongoDB Compass`.
 2. Run `Postman` or any other app.
-3. Select the type of request (`POST, PUT, GET, DELETE`).
-4. Add body to `POST/PUT` request.
-5. Add headers
+3. Go to the `db` folder and run`db.bat`, which will create sample collections. (works only Windows)
+4. Select the type of request (`POST, PUT, GET, DELETE`).
+5. Add body to `POST/PUT` request.
+6. Add headers
 
 ```
 "Content-Type": "application/json"
 ```
 
 6. If you use [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) for VS Code, open file `api.rest` and testing api.
-
-### Endpoints
-
----
 
 #### Movies
 
@@ -195,7 +192,11 @@ http://localhost:3000/api/rooms/{rooms_id}/seats/{seat_id}
 1. GET
 
 ```
+All users:
 http://localhost:3000/api/users
+
+Single user:
+http://localhost:3000/api/users/{user-id}
 ```
 
 2. POST
@@ -304,4 +305,58 @@ http://localhost:3000/api/screenings/{show_id}
 
 ```
 http://localhost:3000/api/screenings/{show_id}
+```
+
+---
+
+### Tickets
+
+---
+
+1. GET
+
+```
+All tickets
+http://localhost:3000/api/ticket
+
+Single ticket:
+http://localhost:3000/api/ticket/{ticket_id}
+```
+
+2. POST
+
+```
+http://localhost:3000/api/ticket
+
+{
+	"name": STRING, REQUIRED
+	"lastname": STRING, REQUIRED
+	"movie": STRING, REQUIRED
+	"showTime": DATE, REQUIRED, FORMAT: "YYYY-MM-DDTHH:MM" EG. "2019-12-27T15:00"
+	"seat": STRING, REQUIRED, UNIQUE
+	"price": NUMBER, REQUIRED
+	"ticketType": STRING, ENUM['Normalny','Ulgowy','Grupowy']
+}
+```
+
+3. PUT
+
+```
+http://localhost:3000/api/ticket/{ticket_id}
+
+{
+	"name": STRING, REQUIRED
+	"lastname": STRING, REQUIRED
+	"movie": STRING, REQUIRED
+	"showTime": DATE, REQUIRED, FORMAT: "YYYY-MM-DDTHH:MM" EG. "2019-12-27T15:00"
+	"seat": STRING, REQUIRED, UNIQUE
+	"price": NUMBER, REQUIRED
+	"ticketType": STRING, ENUM['Normalny','Ulgowy','Grupowy']
+}
+```
+
+4. DELETE
+
+```
+http://localhost:3000/api/ticket/{ticket_id}
 ```
