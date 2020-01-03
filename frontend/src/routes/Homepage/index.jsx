@@ -14,15 +14,24 @@ const Homepage = () => {
   useEffect(() => {
     const controller = new AbortController();
 
-    fetch(`${moviesApi}`, { signal: controller.signal })
+    fetch('http://localhost:3000/api/movies', { signal: controller.signal })
       .then(res => res.json())
-      .then(json => setMovies(json.results))
+      .then(json => setMovies(json))
       .catch(err => {
         if (err.name === 'AbortError') {
           // eslint-disable-next-line no-useless-return
           return;
         }
       });
+    // fetch(`${moviesApi}`, { signal: controller.signal })
+    //   .then(res => res.json())
+    //   .then(json => setMovies(json.results))
+    //   .catch(err => {
+    //     if (err.name === 'AbortError') {
+    //       // eslint-disable-next-line no-useless-return
+    //       return;
+    //     }
+    //   });
     fetch(`${endpointGetGenres}`, { signal: controller.signal })
       .then(res => res.json())
       .then(json => setGenres(json.genres))
@@ -53,16 +62,16 @@ const Homepage = () => {
           </div>
         </div>
         <div className="row">
-          <MovieList movies={movies.slice(0, 8)} />
+          <MovieList movies={movies} />
         </div>
-        <div className="row">
+        {/* <div className="row">
           <div className="col">
             <h3 className="movies-header">ajmax presents</h3>
           </div>
         </div>
         <div className="row">
           <MovieList movies={movies.slice(8, 16)} />
-        </div>
+        </div> */}
       </div>
     </div>
   );
