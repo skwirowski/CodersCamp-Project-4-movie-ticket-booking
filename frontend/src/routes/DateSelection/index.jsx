@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import DateSelectionPicker from 'components/DateSelectionPicker';
 
-const DateSelection = () => {
+const DateSelection = (props) => {
   const [screenings, setScreenings] = useState([]);
-
+console.log("blala" ,props)
   useEffect(() => {
     const controller = new AbortController();
     const mockedScreenings = [

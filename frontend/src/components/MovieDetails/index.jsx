@@ -40,7 +40,10 @@ const MovieDetails = (props) => {
                             </iframe> 
                         </div>
                         <div className="col d-flex flex-column justify-content-center align-items-center">
-                            <Link to={dateSelection(id)}><button className="btn">BOOK</button></Link>
+                            <Link to={{
+                                pathname: dateSelection(id),
+                                state: props
+                            }}><button className="btn">BOOK</button></Link>
                             <Link to={homepage}><button className="btn">GO BACK</button></Link>
                         </div>
                     </div>
