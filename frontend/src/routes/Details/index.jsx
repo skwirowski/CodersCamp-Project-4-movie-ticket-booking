@@ -46,7 +46,7 @@ const Details = () => {
         count={movies.vote_count}
         releaseDate={movies.release_date}
         content={movies.overview}
-        trailers={trailers[0]? trailers[0].key : null}
+        trailers={trailers && trailers[0]? trailers[0].key : null}
         />
     </div>
   );
