@@ -42,7 +42,6 @@ const Shows = mongoose.model(
       type: String,
       required: true,
       minlength: 3,
-      maxlenght: 255,
       trim: true,
     },
     category: {
@@ -76,7 +75,6 @@ const Shows = mongoose.model(
       type: String,
       required: true,
       minlength: 3,
-      maxlenght: 255,
       trim: true,
     },
     seatsAvailable: {

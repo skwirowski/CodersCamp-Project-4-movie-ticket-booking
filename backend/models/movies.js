@@ -16,7 +16,6 @@ const Movies = mongoose.model(
       type: String,
       required: true,
       minlength: 3,
-      maxlenght: 255,
       trim: true,
     },
     category: {
@@ -50,7 +49,6 @@ const validation = movie => {
       .required(),
     desc: Joi.string()
       .min(3)
-      .max(255)
       .required(),
     category: Joi.array().required(),
     duration: Joi.number().required(),
