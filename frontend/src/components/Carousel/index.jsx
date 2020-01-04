@@ -10,19 +10,23 @@ const Carousel = ({ movies }) => {
       <CarouselItem1 movie={movie} genres={movie.category} key={movie._id} />
     );
   });
+
   const renderedMovies = movies.slice(1).map(movie => {
     return (
       // eslint-disable-next-line no-underscore-dangle
       <CarouselItem movie={movie} genres={movie.category} key={movie._id} />
     );
   });
-  const indicators = movies.map(movie => (
-    <li
-      data-target="#slider"
-      data-slide-to={movies.indexOf(movie) + 1}
-      key={movies.indexOf(movie) + 1}
-    />
-  ));
+
+  const indicators = movies.slice(1).map(movie => {
+    return (
+      <li
+        data-target="#slider"
+        data-slide-to={movies.indexOf(movie)}
+        key={movies.indexOf(movie)}
+      />
+    );
+  });
   return (
     <div
       id="slider"
@@ -30,25 +34,23 @@ const Carousel = ({ movies }) => {
       data-ride="carousel"
       data-interval="3000"
     >
-      {/* <!-- Indicators --> */}
       <ol className="carousel-indicators">
         <li data-target="#slider" data-slide-to="0" className="active" />
         {indicators}
       </ol>
 
-      {/* <!-- The slideshow --> */}
       <div className="carousel-inner">
         {firstItem}
         {renderedMovies}
       </div>
-      {/* <!-- Left and right controls --> */}
       <a
         className="carousel-control-prev"
         href="#slider"
         data-slide="prev"
         role="button"
       >
-        <span className="carousel-control-prev-icon" />
+        <span className="carousel-control-prev-icon" aria-hidden="true" />
+        <span className="sr-only">Previous</span>
       </a>
       <a
         className="carousel-control-next"
@@ -56,7 +58,8 @@ const Carousel = ({ movies }) => {
         data-slide="next"
         role="button"
       >
-        <span className="carousel-control-next-icon" />
+        <span className="carousel-control-next-icon" aria-hidden="true" />
+        <span className="sr-only">Next</span>
       </a>
     </div>
   );
