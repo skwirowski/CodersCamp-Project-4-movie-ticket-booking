@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import BookingSummary from 'components/BookingSummary';
-import routes from 'static/routes';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { apiUrl, apiKey } from 'static/moviesAPI';
-
-
-
-
 
 const Summary = () => {
     const [movie, setMovie] = useState([]);
@@ -15,7 +10,7 @@ const Summary = () => {
     useEffect(() => {
         const controller = new AbortController();
     
-        fetch(`${apiUrl}${id}?api_key=${apiKey}`, { signal: controller.signal })
+      fetch(`http://localhost:3000/api/movies/${id}`, { signal: controller.signal })
           .then(res => res.json())
           .then(json => setMovie(json))
           .catch(err => {
@@ -26,22 +21,15 @@ const Summary = () => {
       
         return () => controller.abort();
       }, [id]);
-    
-      const posterUrl = 'https://image.tmdb.org/t/p/w500'
-    const { ticket, seatingChoice } = routes;
     return (
         <div>
             <BookingSummary
-                title= {movie.title}
+              title= {movie.title}
                 reservationTime={1577477896000}
                 seats={[{ row: 21, column: 'B' }, { row: '21', column: 'C' }]}
-                image={`${posterUrl}${movie.poster_path}`}
+                image={`${movie.image}`}
             />
-            <button><Link to={seatingChoice(id)}>Go back</Link></button>
-            <button><Link to={ticket(id)}>Book tickets</Link></button>
-
         </div>
-
     );
 };
 
