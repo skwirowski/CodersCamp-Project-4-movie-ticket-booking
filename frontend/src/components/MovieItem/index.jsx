@@ -1,15 +1,16 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { posterUrl } from 'static/moviesAPI';
 
 const MovieItem = ({ movie }) => {
   return (
     <div className="movie-item">
-      <img
-        className="img-thumbnail mx-auto d-block img-fluid"
-        alt={movie.premiere}
-        src={movie.image}
-      />
+      <div className="image mx-auto">
+        <img
+          className="img-thumbnail mx-auto d-block img-fluid"
+          alt={movie.premiere}
+          src={movie.image}
+        />
+      </div>
       <button type="submit" className="btn">
         MORE
       </button>
