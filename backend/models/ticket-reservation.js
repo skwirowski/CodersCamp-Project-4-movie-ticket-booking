@@ -48,7 +48,7 @@ const ticketSchema = new mongoose.Schema({
     ticketType: {
         type: String,
         required: true,
-        enum:['Normalny','Ulgowy','Grupowy'],
+        enum:['Normal','Discounted','Group'],
     }
   });
   
@@ -89,7 +89,7 @@ function validate(ticket) {
         .required(),
       ticketType: Joi.string()
         .required()
-        .valid('Normalny','Ulgowy','Grupowy')
+        .valid('Normal','Ulgowy','Grupowy')
 
     };
   

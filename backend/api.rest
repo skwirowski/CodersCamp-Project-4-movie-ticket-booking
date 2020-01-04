@@ -168,11 +168,11 @@ GET http://localhost:3000/api/screenings
 
 # Display movie screenings by name 
 ###
-GET http://localhost:3000/api/screenings?shows=New Film 4
+GET http://localhost:3000/api/screenings?shows=cats
 
 # Display movie screenings by room 
 ###
-GET http://localhost:3000/api/screenings?room=Room 2
+GET http://localhost:3000/api/screenings?room=R01
 
 # Display movie screenings by date 
 ###

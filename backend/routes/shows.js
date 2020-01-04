@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     )
     res.send(showsByName)
   } else if (req.query['shows']) {
-    const showsByName = shows.filter(show => show.title === req.query['shows'])
+    const showsByName = shows.filter(({title}) => new RegExp(`${req.query['shows']}`,'gi').test(title))
     res.send(showsByName)
   } else if (req.query['room']) {
     const showsByRoom = shows.filter(
