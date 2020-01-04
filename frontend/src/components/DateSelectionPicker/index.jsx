@@ -38,18 +38,18 @@ const DateSelectionPicker = props => {
   return (
     <div className="container">
       <div className="row">
-        <div class="tabs">
+        <div className="tabs">
           <Tabs>
             <TabList>
               {daysOfTheWeek.map((days, index) => (
-                <Tab>{getDayName(index)}</Tab>
+                <Tab key={index}>{getDayName(index)}</Tab>
               ))}
             </TabList>
             {daysOfTheWeek.map((days, index) => (
-              <TabPanel className="tab-panel">
+              <TabPanel key={index} className="tab-panel">
                 {getScreeningsPerDay(props.screenings, index).map(item => {
                   return (
-                    <Link to={seatingChoice(id)}>
+                    <Link to={seatingChoice(id)} key={item}>
                       <button className="btn">{item}</button>
                     </Link>
                   );
@@ -59,12 +59,10 @@ const DateSelectionPicker = props => {
           </Tabs>
         </div>
       </div>
-      <div className="col-8">
-        <div className="col d-flex flex-column justify-content-left align-items-left">
-          <Link to={details(id)}>
-            <button className="btn">GO BACK</button>
-          </Link>
-        </div>
+      <div className="row">
+        <Link to={details(id)}>
+          <button className="btn">GO BACK</button>
+        </Link>
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ const BookingSummary = (props) => {
             <div className="row">
                 <div className="col-4">
                     <img className="img-thumbnail mx-auto d-block img-fluid"
-                        alt={props.releaseDate}
+                        alt={props.premiere}
                         src={props.image} />
                 </div>
                 <div className="col-8">

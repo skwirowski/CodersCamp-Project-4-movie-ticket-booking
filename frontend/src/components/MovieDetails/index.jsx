@@ -13,7 +13,7 @@ const MovieDetails = (props) => {
             <div className="row">
                 <div className="col-4">
                     <img className="img-thumbnail mx-auto d-block img-fluid" 
-                    alt={props.premiere}
+                    alt={props.releaseDate}
                     src={props.image} />
                 </div>
                 <div className="col-8">
