@@ -13,19 +13,24 @@ const MovieDetails = (props) => {
             <div className="row">
                 <div className="col-4">
                     <img className="img-thumbnail mx-auto d-block img-fluid" 
-                    alt={props.releaseDate}
+                    alt={props.premiere}
                     src={props.image} />
                 </div>
                 <div className="col-8">
-                    <div className="movie-details-title">
+                    {/* <div className="movie-details-title">
                         <span>{props.title}</span>
                         <span className="vote"><i className="fas fa-star"></i> {props.vote}</span>
                         <br />
                         <span className="vote">Average rating</span>
+                    </div> */}
+                    <div className="movie-details-title">
+                        <span>{props.title}</span>
                     </div>
                     <div>
                         <span className="text">Relase Date:  </span>
-                        <div> {props.releaseDate}</div>
+                        <span> {props.releaseDate}</span>
+                        <span className="vote"> <i className="far fa-clock"></i> {props.time} MIN.</span>
+                        <span className="vote">Duration: </span>
                     </div>
                     <div>
                         <span className="text">Description: </span>
