@@ -64,6 +64,7 @@ const validationRoom = room => {
       .required(),
     desc: Joi.string()
       .min(3)
+      .max(255)
       .required(),
     seatsAvailable: Joi.number().required(),
     seats: Joi.array(),

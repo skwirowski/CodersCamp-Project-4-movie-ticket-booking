@@ -4,7 +4,7 @@ const router = express.Router()
 const { Shows } = require('../models/shows')
 const { Rooms } = require('../models/rooms')
 const { Movies } = require('../models/movies')
-const { SPECIAL_CHARACTERS } = require('../constants/constants')
+
 router.get('/', async (req, res) => {
   const shows = await Shows.find()
   if (req.query['day'] && req.query['shows']) {
@@ -16,16 +16,7 @@ router.get('/', async (req, res) => {
     )
     res.send(showsByName)
   } else if (req.query['shows']) {
-<<<<<<< HEAD
     const showsByName = shows.filter(({title}) => new RegExp(`${req.query['shows']}`,'gi').test(title))
-=======
-    const showsByName = shows.filter(({ title }) =>
-      new RegExp(
-        `${req.query['shows'].replace(SPECIAL_CHARACTERS, '')}`,
-        'gi'
-      ).test(title.replace(SPECIAL_CHARACTERS, ''))
-    )
->>>>>>> fix
     res.send(showsByName)
   } else if (req.query['room']) {
     const showsByRoom = shows.filter(
