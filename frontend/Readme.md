@@ -66,3 +66,10 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+### How to use the app?
+- Run nodemon in backend directory and create database according to backend readme file
+- Run npm start in frontend directory (port 3001)
+- If running with a different port number, update verse 28 in the backend folder in the index.js file according to the port of your choice
+- Have fun!

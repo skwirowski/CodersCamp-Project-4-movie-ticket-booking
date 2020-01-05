@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import getRequest from './temporaryHelpers/getRequest';
 import putRequest, { resetData } from './temporaryHelpers/putRequest';
@@ -76,6 +77,24 @@ const SeatingChoice = () => {
         Temporary SAVE button
       </button>
     </>
+=======
+import React from 'react';
+import { Link, useParams } from 'react-router-dom';
+import routes from 'static/routes';
+
+const SeatingChoice = props => {
+  const { dateSelection, summary } = routes;
+  const { id } = useParams();
+  return (
+    <div>
+      <button>
+        <Link to={dateSelection(id)}>Go back</Link>
+      </button>
+      <button>
+        <Link to={summary(id)}>Go To Summary</Link>
+      </button>
+    </div>
+>>>>>>> develop
   );
 };
 
