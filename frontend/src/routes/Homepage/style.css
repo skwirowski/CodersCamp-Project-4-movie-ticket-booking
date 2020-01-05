@@ -22,6 +22,7 @@
   border:none;
   box-shadow: 0 5px 5px -5px rgba(250,250,250,0.5);
   color: var(--main-text);
+  display: none;
 }
 
 .search-box-input {

@@ -17,7 +17,7 @@ export const CarouselItem1 = ({ movie, genres }) => {
 
   return (
     <div className="carousel-item active">
-      <div className="content">
+      <div className="content carousel-caption">
         <Link to={details(movie._id)}>
           <h2>{movie.title}</h2>
         </Link>
@@ -43,7 +43,7 @@ export const CarouselItem = ({ movie, genres }) => {
 
   return (
     <div className="carousel-item">
-      <div className="content">
+      <div className="content carousel-caption">
         <Link to={details(movie._id)}>
           <h2>{movie.title}</h2>
         </Link>
