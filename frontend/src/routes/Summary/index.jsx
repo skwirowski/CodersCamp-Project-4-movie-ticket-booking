@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BookingSummary from 'components/BookingSummary';
 import { useParams } from 'react-router-dom';
-import { apiUrl, apiKey } from 'static/moviesAPI';
 
 const Summary = () => {
     const [movie, setMovie] = useState([]);

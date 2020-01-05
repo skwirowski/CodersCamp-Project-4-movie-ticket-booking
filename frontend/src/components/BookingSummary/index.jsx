@@ -18,20 +18,32 @@ const BookingSummary = (props) => {
                         src={props.image} />
                 </div>
                 <div className="col-8">
-                    <div className="header">
-                        Your booking summary
-                </div>
-                    <span className="summary-title">Movie Title: {props.title}</span>
-                    <div className="time">Reservation Time: {convertTimestamp(props.reservationTime)}</div>
-                    <div className="text">Seats Booked: {props.seats.map((item, key) =>
-                        <li>{`${item.row}${item.column}`}</li>
-                    )}</div>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col d-flex flex-column justify-content-center align-items-center">
-                    <Link to={ticket(id)}><button className="btn">BOOK TICKET</button></Link>
-                    <Link to={seatingChoice(id)}><button className="btn">GO BACK</button></Link>
+                    <div className="row">
+                        <div className="col">
+                            <div className="header">
+                                Your booking summary:
+                            </div>
+                            <div>
+                                <span className="summary">Movie Title: </span>
+                                <span>{props.title}</span>
+                            </div>
+                            <div>
+                                <span className="summary">Reservation Time: </span>
+                                <span>{convertTimestamp(props.reservationTime)}</span>
+                            </div>
+                            <div>
+                                <span className="text">Seats Booked: </span>
+                                <span>{props.seats.map((item, key) =>
+                                    <li>{`${item.row}${item.column}`}</li>
+                                )}
+                                </span>
+                            </div>
+                        </div>
+                        <div className="col d-flex flex-column justify-content-center align-items-center">
+                            <Link to={ticket(id)}><button className="btn">PRINT TICKET</button></Link>
+                            <Link to={seatingChoice(id)}><button className="btn">GO BACK</button></Link>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

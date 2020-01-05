@@ -29,8 +29,10 @@ const MovieDetails = (props) => {
                     <div>
                         <span className="text">Relase Date:  </span>
                         <span> {props.releaseDate}</span>
-                        <span className="vote"> <i className="far fa-clock"></i> {props.time} MIN.</span>
-                        <span className="vote">Duration: </span>
+                    </div>
+                    <div>
+                        <span className="text">Duration: </span>
+                        <span> <i className="far fa-clock"></i> {props.time} MIN.</span>
                     </div>
                     <div>
                         <span className="text">Description: </span>

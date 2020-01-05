@@ -7,9 +7,10 @@
   .vote {
       float: right;
   }
-  /* .vote:nth-child(4) {
+  .vote:nth-child(4) {
       font-size: 0.8rem;
-  } */
+      color: var(--main-text);
+  }
   .text {
       font-size: 0.8rem;
       color: var(--main-text);
