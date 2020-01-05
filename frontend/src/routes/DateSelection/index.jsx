@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import DateSelectionPicker from 'components/DateSelectionPicker';
 
-const DateSelection = (props) => {
+const DateSelection = () => {
   const [screenings, setScreenings] = useState([]);
-console.log("blala" ,props)
   useEffect(() => {
     const controller = new AbortController();
     const mockedScreenings = [
-    
       '2020-01-03T15:00',
       '2020-01-03T18:00',
       '2020-01-03T20:00',
@@ -31,9 +29,9 @@ console.log("blala" ,props)
       '2020-01-08T21:00',
       '2020-01-08T23:00',
       '2020-01-09T17:00',
-      '2020-01-09T19:00', 
+      '2020-01-09T19:00',
     ];
-    
+
     setScreenings(mockedScreenings);
     return () => controller.abort();
   }, []);

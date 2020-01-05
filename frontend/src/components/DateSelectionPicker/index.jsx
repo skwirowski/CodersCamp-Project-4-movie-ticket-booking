@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import routes from 'static/routes';
@@ -20,12 +21,10 @@ const DateSelectionPicker = props => {
   const getDayName = buffer => {
     const date = new Date();
     const day = date.getDay();
-    if(day + buffer < 7 ){
+    if (day + buffer < 7) {
       return daysOfTheWeek[day + buffer];
-    } else {
-      return daysOfTheWeek[Math.abs(daysOfTheWeek.length - day -  buffer)];
     }
-   
+    return daysOfTheWeek[Math.abs(daysOfTheWeek.length - day - buffer)];
   };
 
   const getScreeningsPerDay = (screenings, buffer) => {
@@ -42,15 +41,17 @@ const DateSelectionPicker = props => {
           <Tabs>
             <TabList>
               {daysOfTheWeek.map((days, index) => (
-                <Tab key={index}>{getDayName(index)}</Tab>
+                <Tab key={daysOfTheWeek.indexOf(days)}>{getDayName(index)}</Tab>
               ))}
             </TabList>
             {daysOfTheWeek.map((days, index) => (
-              <TabPanel key={index} className="tab-panel">
+              <TabPanel key={daysOfTheWeek.indexOf(days)} className="tab-panel">
                 {getScreeningsPerDay(props.screenings, index).map(item => {
                   return (
                     <Link to={seatingChoice(id)} key={item}>
-                      <button className="btn">{item}</button>
+                      <button className="btn" type="submit">
+                        {item}
+                      </button>
                     </Link>
                   );
                 })}
@@ -61,7 +62,9 @@ const DateSelectionPicker = props => {
       </div>
       <div className="row">
         <Link to={details(id)}>
-          <button className="btn">GO BACK</button>
+          <button className="btn" type="submit">
+            GO BACK
+          </button>
         </Link>
       </div>
     </div>
