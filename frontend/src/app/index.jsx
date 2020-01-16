@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
+import 'css/App.css';
 import routes from 'static/routes';
 import moviesThunk from 'redux/thunk/moviesThunk';
 import Homepage from 'routes/Homepage';
@@ -10,6 +11,7 @@ import DateSelection from 'routes/DateSelection';
 import SeatingChoice from 'routes/SeatingChoice';
 import Summary from 'routes/Summary';
 import Ticket from 'routes/Ticket';
+import Main from 'components/Main';
 
 const App = () => {
   //* Redux operations
@@ -42,32 +44,34 @@ const App = () => {
   //*
 
   return (
-    <div className="main-container">
+    <div className="container-fluid">
       {moviesListLoading ? (
         <h1>Loading...</h1>
       ) : (
-        <Router>
-          <Switch>
-            <Route exact path={homepage}>
-              <Homepage moviesList={moviesListState} />
-            </Route>
-            <Route exact path={details(':id')}>
-              <Details />
-            </Route>
-            <Route exact path={dateSelection(':id')}>
-              <DateSelection />
-            </Route>
-            <Route exact path={seatingChoice(':id')}>
-              <SeatingChoice />
-            </Route>
-            <Route exact path={summary(':id')}>
-              <Summary />
-            </Route>
-            <Route exact path={ticket(':id')}>
-              <Ticket />
-            </Route>
-          </Switch>
-        </Router>
+        <Main>
+          <Router>
+            <Switch>
+              <Route exact path={homepage}>
+                <Homepage moviesList={moviesListState} />
+              </Route>
+              <Route exact path={details(':id')}>
+                <Details />
+              </Route>
+              <Route exact path={dateSelection(':id')}>
+                <DateSelection />
+              </Route>
+              <Route exact path={seatingChoice(':id')}>
+                <SeatingChoice />
+              </Route>
+              <Route exact path={summary(':id')}>
+                <Summary />
+              </Route>
+              <Route exact path={ticket(':id')}>
+                <Ticket />
+              </Route>
+            </Switch>
+          </Router>
+        </Main>
       )}
     </div>
   );
